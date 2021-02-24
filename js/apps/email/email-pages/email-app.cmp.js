@@ -6,6 +6,7 @@ import emailList from '../email-cmps/email-list.cmp.js'
 export default {
     template: `
         <section class="email-app">
+            <email-header />
           <book-filter @filtered="setFilter"/> 
           <book-list :books="booksToShow" @selected="selectBook" @remove="removeBook"></book-list> 
           <router-link to="/book/edit">Add a new book!</router-link>
