@@ -1,0 +1,18 @@
+/* .list-container {
+    flex-direction: column;
+} */
+
+.note-btns i {
+    margin-inline-end: 10px;
+}
+
+.note-btns i:hover {
+    cursor: pointer;
+    color: rgba(240, 240, 240, 0.767);
+    /* color: rgb(255, 94, 107); */
+}
+
+.note-preview {
+    justify-content: space-between;
+    flex-direction: column;
+}

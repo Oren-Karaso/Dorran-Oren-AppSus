@@ -9,7 +9,8 @@ import keepPreview from '../keep-cmps/keep-preview.cmp.js';
 
 export default {
     template: `
-         <section class="keep-app">
+        <section class="keep-app flex">
+
         <keep-list :notes="notes" />
 
         </section>
