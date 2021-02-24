@@ -1,15 +1,17 @@
 import { emailService } from '../email-service/email.service.js'
 import emailFilter from '../email-cmps/email-filter.cmp.js'
 import emailList from '../email-cmps/email-list.cmp.js'
+import emailDetails from '../email-pages/email-details.cmp.js'
 
 
 export default {
     template: `
         <section class="email-app">
           <email-filter @filtered="setFilter" /> 
-          <email-details @selected="selectEmail" v-if="selectedEmail" /> 
-          <email-list v-else :emails="emailsToShow" />
-          <router-link to="">under construction</router-link>
+          <router-view />
+          <!-- <email-details @selected="selectEmail" v-if="selectedEmail" />  -->
+          <!-- <email-list v-else :emails="emailsToShow" /> -->
+          <router-link to=""></router-link>
 
         </section>
     `,
@@ -22,7 +24,7 @@ export default {
     },
     methods: {
         removeEmail(emailId) {
-            emailService.remove(emailId)
+            emailService.removeEmail(emailId)
                 .then(() => {
                     emailService.query()
                         .then(emails => this.emails = emails);
@@ -49,7 +51,12 @@ export default {
     },
     created() {
         this.emails = emailService.query()
-            .then(emails => this.emails = emails);
+            .then(emails => {
+                this.emails = emails
+            })
+            .catch(err => {
+                console.log('error loading emails from emailApp:', err);
+            });
     },
     // watch: {
     //     '$route.params.bookId'(id) {
@@ -60,5 +67,6 @@ export default {
     components: {
         emailFilter,
         emailList,
+        emailDetails
     }
 }
