@@ -6,51 +6,49 @@ import emailList from '../email-cmps/email-list.cmp.js'
 export default {
     template: `
         <section class="email-app">
-            <email-header />
-          <book-filter @filtered="setFilter"/> 
-          <book-list :books="booksToShow" @selected="selectBook" @remove="removeBook"></book-list> 
-          <router-link to="/book/edit">Add a new book!</router-link>
+          <email-filter v-if="emails" @filtered="setFilter"/> 
+          <email-list  v-if="emails" :emails="emailsToShow"></email-list> 
+          <router-link to="">under construction</router-link>
 
         </section>
     `,
     data() {
         return {
-            books: null,
-            selectedBook: null,
+            emails: null,
+            selectedMail: null,
             filterBy: null
         }
     },
     methods: {
-        removeBook(bookId) {
-            emailService.remove(bookId)
+        removeBook(emailId) {
+            emailService.remove(emailId)
                 .then(() => {
                     emailService.query()
-                        .then(books => this.books = books);
+                        .then(emails => this.emails = emails);
                 })
-            // this.booksToShow();
         },
-        selectBook(book) {
-            console.log('pook:', book);
-            this.selectedBook = book;
+        selectBook(email) {
+            console.log('pook:', email);
+            this.selectedMail = email;
         },
         setFilter(filterBy) {
             this.filterBy = filterBy;
         }
     },
     computed: {
-        booksToShow() {
-            if (!this.filterBy) return this.books;
+       emailsToShow() {
+            if (!this.filterBy) return this.emails;
             const searchStr = this.filterBy.byTitle.toLowerCase();
-            const booksToShow = this.books.filter(book => {
-                return book.title.toLowerCase().includes(searchStr);
+            const emailsToShow = this.emails.filter(email => {
+                return email.title.toLowerCase().includes(searchStr);
             })
-            return booksToShow;
+            return emailsToShow;
         }
 
     },
     created() {
-        this.books = bookService.query()
-            .then(books => this.books = books);
+        this.emails = emailService.query()
+            .then(emails => this.emails = emails);
     },
     // watch: {
     //     '$route.params.bookId'(id) {

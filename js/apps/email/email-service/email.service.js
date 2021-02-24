@@ -64,6 +64,7 @@ const gEmails = [
         }
     }
 ]
+console.log('gEmails hardcoded data:', gEmails);
 
 export const emailService = {
     query,
