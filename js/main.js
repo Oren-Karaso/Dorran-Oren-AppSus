@@ -1,8 +1,8 @@
-import { bookService } from './services/book.service.js'
-import booksApp from './pages/books-app.cmp.js'
+// import { bookService } from './services/book.service.js'
+// import booksApp from './pages/books-app.cmp.js'
 import appHeader from './cmps/app-header.cmp.js'
 import userMsg from './cmps/user-msg.cmp.js'
-import { myRouter } from './routes.js'                      //to adjust
+import { myRouter } from './routes.js' //to adjust
 
 const options = {
     el: '#app',
@@ -18,8 +18,8 @@ const options = {
     components: {
         appHeader,
         userMsg,
-        booksApp,
-        bookService
+        // booksApp,
+        // bookService
     }
 }
 
