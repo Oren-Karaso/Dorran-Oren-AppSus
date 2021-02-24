@@ -64,15 +64,15 @@ const gEmails = [
         }
     }
 ]
-console.log('gEmails hardcoded data:', gEmails);
+// console.log('gEmails hardcoded data:', gEmails);
 
 export const emailService = {
     query,
     getById,
-    saveEmail,
+    sendEmail,
     getEmptyEmail,
     removeEmail,
-    getEmailToEdit
+    getEmailsByFolder
 }
 
 function query() {
@@ -85,7 +85,7 @@ function query() {
         });
 }
 
-function saveEmail(email) {
+function sendEmail(email) {
     if (email.id) return storageService.put(EMAIL_KEY, email);
     else return storageService.post(EMAIL_KEY, email);
 }
@@ -116,10 +116,11 @@ function removeEmail(emailId) {
     return storageService.remove(EMAIL_KEY, emailId);
 }
 
-function getEmailToEdit() {
+function getEmailsByFolder(folder) {
     return storageService.query(EMAIL_KEY)
-        .then(books => books.find(book => book.folder === 'draft'))
+        .then(emails => emails.find(email => email.folder === folder))
 }
+
 
 
 

@@ -1,42 +1,45 @@
 import { emailService } from '../email-service/email.service.js'
 import emailFilter from '../email-cmps/email-filter.cmp.js'
 import emailList from '../email-cmps/email-list.cmp.js'
+import emailDetails from '../email-pages/email-details.cmp.js'
 
 
 export default {
     template: `
         <section class="email-app">
-          <email-filter v-if="emails" @filtered="setFilter"/> 
-          <email-list  v-if="emails" :emails="emailsToShow"></email-list> 
-          <router-link to="">under construction</router-link>
+          <email-filter @filtered="setFilter" /> 
+          <router-view />
+          <!-- <email-details @selected="selectEmail" v-if="selectedEmail" />  -->
+          <!-- <email-list v-else :emails="emailsToShow" /> -->
+          <router-link to=""></router-link>
 
         </section>
     `,
     data() {
         return {
             emails: null,
-            selectedMail: null,
+            selectedEmail: null,
             filterBy: null
         }
     },
     methods: {
-        removeBook(emailId) {
-            emailService.remove(emailId)
+        removeEmail(emailId) {
+            emailService.removeEmail(emailId)
                 .then(() => {
                     emailService.query()
                         .then(emails => this.emails = emails);
                 })
         },
-        selectBook(email) {
+        selectEmail(email) {
             console.log('pook:', email);
-            this.selectedMail = email;
+            this.selectedEmail = email;
         },
         setFilter(filterBy) {
             this.filterBy = filterBy;
         }
     },
     computed: {
-       emailsToShow() {
+        emailsToShow() {
             if (!this.filterBy) return this.emails;
             const searchStr = this.filterBy.byTitle.toLowerCase();
             const emailsToShow = this.emails.filter(email => {
@@ -48,7 +51,12 @@ export default {
     },
     created() {
         this.emails = emailService.query()
-            .then(emails => this.emails = emails);
+            .then(emails => {
+                this.emails = emails
+            })
+            .catch(err => {
+                console.log('error loading emails from emailApp:', err);
+            });
     },
     // watch: {
     //     '$route.params.bookId'(id) {
@@ -59,5 +67,6 @@ export default {
     components: {
         emailFilter,
         emailList,
+        emailDetails
     }
 }
