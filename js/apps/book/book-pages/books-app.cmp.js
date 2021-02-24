@@ -1,8 +1,8 @@
-import { bookService } from '../../services/book.service.js';
-import { googleService } from '../../services/google.service.js';
-import bookList from '../cmps/book-list.cmp.js';
-import bookDetails from './book-details.cmp.js';
-import bookAdd from '../cmps/book-add.cmp.js';
+import { bookService } from '../../../services/book.service.js';
+import { googleService } from '../../../services/google.service.js';
+import bookList from '../book-cmps/book-list.cmp.js';
+import bookDetails from './book-details.cmp.js.js.js';
+import bookAdd from '../book-cmps/book-add.cmp.js';
 
 
 

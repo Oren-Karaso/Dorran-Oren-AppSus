@@ -1,3 +1,7 @@
-@import "/css/books/main.css";
-@import "/css/email/main.css";
-@import "/css/keep/main.css";
+/* General */
+
+
+/* Apps */
+@import "books/books-main.css";
+@import "email/email-main.css";
+@import "keep/keeep-main.css";

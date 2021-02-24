@@ -1,12 +1,17 @@
-import bookApp from './pages/book-pages/books-app.cmp.js';
+import bookApp from './apps/book/book-pages/books-app.cmp.js';
 import homePage from './pages/appsus.cmp.js';
 import keepApp from './pages/keep-pages/keep-app.cmp.js';
 import emailApp from './pages/email-pages/email-app.cmp.js';
 
-const routes = [{
+const routes = [
+    {
         path: '/',
         component: homePage,
     },
+    // {
+    //     path: '/about',
+    //     component: ,
+    // },
     {
         path: '/book',
         component: bookApp
@@ -16,9 +21,14 @@ const routes = [{
         component: keepApp
     },
     {
-        path: '/email',
+        path: '/email/:folder',
         component: emailApp
-    }
+    },
+    // {
+    //     path: '/email/:folder/:emailId',
+    //     component: emailDetails
+    // }
+
 ]
 
 export const myRouter = new VueRouter({ routes });
