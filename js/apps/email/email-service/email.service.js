@@ -1,4 +1,7 @@
 import { storageService } from '../../../services/async-storage.service.js'
+import { utilService } from '../../../services/util.service.js';
+
+const EMAIL_KEY = 'email10';
 
 export const emailService = {
     query,
@@ -7,6 +10,7 @@ export const emailService = {
     getEmptyEmail,
     removeEmail,  
 }
+
 
 function query() {
 
