@@ -1,6 +1,6 @@
 @import "/css/fonts.css";
 @import "/css/helpers.css";
-@import "/css/email/email-compose.css";
-@import "/css/email/email-list.css";
-@import "/css/email/email-details.css";
-@import "/css/email/email-filter.css";
+@import "/css/email/cmps/email-compose.css";
+@import "/css/email/cmps/email-list.css";
+@import "/css/email/pages/email-details.css";
+@import "/css/email/cmps/email-filter.css";

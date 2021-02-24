@@ -4,7 +4,8 @@ import keepApp from './apps/keep/keep-pages/keep-app.cmp.js';
 import emailApp from './apps/email/email-pages/email-app.cmp.js';
 import emailDetails from './apps/email/email-pages/email-details.cmp.js';
 
-const routes = [{
+const routes = [
+    { 
         path: '/',
         component: homePage,
     },
