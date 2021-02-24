@@ -1,10 +1,10 @@
-import bookApp from './apps/book/book-pages/books-app.cmp.js';
+import bookApp from './apps/book/book-pages/book-app.cmp.js';
 import homePage from './pages/appsus.cmp.js';
-import keepApp from './pages/keep-pages/keep-app.cmp.js';
-import emailApp from './pages/email-pages/email-app.cmp.js';
+import keepApp from './apps/keep/keep-pages/keep-app.cmp.js';
+import emailApp from './apps/email/email-pages/email-app.cmp.js';
+import emailDetails from './apps/email/email-pages/email-details.cmp.js';
 
-const routes = [
-    {
+const routes = [{
         path: '/',
         component: homePage,
     },
@@ -24,10 +24,10 @@ const routes = [
         path: '/email/:folder',
         component: emailApp
     },
-    // {
-    //     path: '/email/:folder/:emailId',
-    //     component: emailDetails
-    // }
+    {
+        path: '/email/:folder/:emailId',
+        component: emailDetails
+    }
 
 ]
 
