@@ -6,7 +6,8 @@ const KEEP_KEY = 'keeps';
 export const keepService = {
     query,
     getById,
-    createKeep
+    createKeep,
+    addKeep
     // saveKeep,
     // removeKeep
 
@@ -28,7 +29,7 @@ function query() {
                         id: utilService.makeId(),
                         type: "NoteImg",
                         info: {
-                            url: "http://some-img/me",
+                            url: "../../img/pink.gif",
                             title: "Me playing Mi"
                         },
                         style: {
@@ -97,10 +98,29 @@ function getById(id) {
 //     }
 //     return notes;
 // }
+function addKeep(note) {
+    storageService.post(KEEP_KEY, note)
+}
+
 
 function createKeep() {
     var note = {
-
+        id: utilService.makeId(),
+        type: null,
+        isPinned: false,
+        info: {
+            url: null,
+            title: null,
+            todo: {
+                lable: null,
+                todos: [{
+                    txt: null,
+                    doneAt: new Date()
+                }]
+            },
+            txt: null,
+        },
+        style: null
     }
     return note;
 }
