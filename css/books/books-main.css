@@ -134,7 +134,9 @@ body {
     min-height: 350px;
     min-width: 350px;
     border-radius: 50%;
-    background-image: url(/img/book.gif);
+    background-image: url(/img/pink.gif);
+    background-size: 150%;
+    background-position: center;
     opacity: 70%;
 }
 
