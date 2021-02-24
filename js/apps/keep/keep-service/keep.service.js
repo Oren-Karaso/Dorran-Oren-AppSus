@@ -2,10 +2,8 @@ import { storageService } from '../../../services/async-storage.service.js';
 import { utilService } from '../../../services/util.service.js';
 
 const KEEP_KEY = 'keeps';
-// var notesDB = [];
 
-
-export const noteService = {
+export const keepService = {
     query,
     getById,
     createKeep
@@ -17,10 +15,9 @@ export const noteService = {
 function query() {
     return storageService.query(KEEP_KEY)
         .then(notes => {
-            console.log(notes);
             if (!notes.length) {
                 notes = [{
-                        id: utilService.makeId,
+                        id: utilService.makeId(),
                         type: "NoteTxt",
                         isPinned: true,
                         info: {
@@ -28,7 +25,7 @@ function query() {
                         }
                     },
                     {
-                        id: utilService.makeId,
+                        id: utilService.makeId(),
                         type: "NoteImg",
                         info: {
                             url: "http://some-img/me",
@@ -39,7 +36,7 @@ function query() {
                         }
                     },
                     {
-                        id: utilService.makeId,
+                        id: utilService.makeId(),
                         type: "NoteTodos",
                         info: {
                             label: "How was it:",
@@ -53,6 +50,7 @@ function query() {
 
                 return storageService.postMany(KEEP_KEY, notes);
             }
+            console.log(notes);
             return notes;
         })
 }
