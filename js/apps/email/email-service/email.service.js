@@ -10,7 +10,7 @@ const gEmails = [
             isRead: false,
             timestamp: new Date()
         },
-        folder: 'inbox',
+        folder: 'draft',
         content: {
             to: 'Ima',
             from: 'Aba',
@@ -25,7 +25,7 @@ const gEmails = [
             isRead: true,
             timestamp: new Date()
         },
-        folder: 'inbox',
+        folder: 'sent',
         content: {
             to: 'Aba',
             from: 'Ima',
@@ -55,7 +55,7 @@ const gEmails = [
             isRead: true,
             timestamp: new Date()
         },
-        folder: 'inbox',
+        folder: 'trash',
         content: {
             to: 'Savta',
             from: 'Saba',
@@ -71,6 +71,7 @@ export const emailService = {
     saveEmail,
     getEmptyEmail,
     removeEmail,
+    getEmailToEdit
 }
 
 function query() {
@@ -93,7 +94,7 @@ function getById(id) {
 }
 
 function getEmptyEmail() {
-  return {
+    return {
         id: utilService.makeId(),
         status: {
             starred: false,
@@ -113,5 +114,11 @@ function getEmptyEmail() {
 function removeEmail(emailId) {
     return storageService.remove(EMAIL_KEY, emailId);
 }
+
+function getEmailToEdit() {
+    return storageService.query(EMAIL_KEY)
+        .then(books => books.find(book => book.folder === 'draft'))
+}
+
 
 
