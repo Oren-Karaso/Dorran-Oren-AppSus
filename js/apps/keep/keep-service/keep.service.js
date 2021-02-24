@@ -23,13 +23,15 @@ function query() {
                         isPinned: true,
                         info: {
                             txt: "Fullstack Me Baby!"
-                        }
+                        },
+                        style: { backgroundColor: '#eeff00ea' }
+
                     },
                     {
                         id: utilService.makeId(),
                         type: "NoteImg",
                         info: {
-                            url: "../../img/pink.gif",
+                            url: "https://memegenerator.net/img/instances/69508134/i-know-vuejs.jpg",
                             title: "Me playing Mi"
                         },
                         style: {
@@ -45,7 +47,9 @@ function query() {
                                 { txt: "Do that", doneAt: null },
                                 { txt: "Do this", doneAt: 187111111 }
                             ]
-                        }
+                        },
+                        style: { backgroundColor: '#eeff00ea' }
+
                     }
                 ]
 
@@ -120,7 +124,7 @@ function createKeep() {
             },
             txt: null,
         },
-        style: null
+        style: { backgroundColor: '#eeff00ea' }
     }
     return note;
 }

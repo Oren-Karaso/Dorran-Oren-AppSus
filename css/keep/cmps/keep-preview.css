@@ -16,3 +16,7 @@
     justify-content: space-between;
     flex-direction: column;
 }
+
+.note-img {
+    width: 100%;
+}

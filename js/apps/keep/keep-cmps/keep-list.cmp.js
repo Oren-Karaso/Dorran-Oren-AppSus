@@ -7,9 +7,7 @@ export default {
         <ul class="keep-list grid-container">
             <li v-for="note in notes" :key="note.id" class="note-simple grid-item flex" >
                 <keep-preview :note="note" @click.native="logId(note.id)" />
-                <div class="btns-container">
-                    <!-- <router-link :to="'/note/'+note.id" class="nav-link"><button @click="select(note)">Details</button></router-link> -->
-                </div>
+               
             </li>
         </ul>
     <!-- </section> -->

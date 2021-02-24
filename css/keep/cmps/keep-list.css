@@ -11,11 +11,12 @@
 
 .grid-item {
     box-shadow: 0 0 7px rgba(15, 15, 15, 0.322);
-}
-
-.note-simple {
     padding: 15px 10px 10px 10px;
-    background-color: rgba(238, 255, 0, 0.918);
+    background-color: #eeff00ea;
     color: rgb(255, 250, 245);
+    width: 100%;
     text-shadow: 2px 2.5px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
+
+
+/* .note-simple {} */
