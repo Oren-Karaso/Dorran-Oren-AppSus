@@ -1,0 +1,65 @@
+.pointer,
+button {
+    cursor: pointer;
+}
+
+.flip {
+    transform: rotate(90deg);
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+.grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
+.hidden {
+    display: none;
+}
+
+.center-item {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+ul {
+    margin: 0 auto;
+    padding: 0;
+}
+
+button {
+    font-size: 1rem;
+    text-align: center;
+    align-content: center;
+    align-self: flex-start;
+    cursor: pointer;
+}
+
+i {
+    margin: 0;
+}
