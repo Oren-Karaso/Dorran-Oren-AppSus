@@ -1,4 +1,4 @@
-import bookApp from './apps/book/book-pages/books-app.cmp.js';
+import bookApp from './apps/book/book-pages/book-app.cmp.js';
 import homePage from './pages/appsus.cmp.js';
 import keepApp from './pages/keep-pages/keep-app.cmp.js';
 import emailApp from './pages/email-pages/email-app.cmp.js';
