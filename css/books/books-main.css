@@ -134,7 +134,7 @@ body {
     min-height: 350px;
     min-width: 350px;
     border-radius: 50%;
-    background-image: url(img/pink.gif);
+    background-image: url(../../img/pink.gif);
     background-size: 150%;
     background-position: center;
     opacity: 70%;
@@ -187,7 +187,7 @@ body {
 }
 
 .book-preview-container:hover {
-    background-image: url(img/book.gif);
+    background-image: url(../../img/book.gif);
     background-position: left;
 }
 
@@ -260,7 +260,7 @@ p {
     background-color: #1e1d2786;
     /* background-color: #f1f1f160; */
     /* background-color: rgba(255, 244, 214, 0.616); */
-    background-image: url(img/pink.gif);
+    background-image: url(../../img/pink.gif);
     background-size: 120%;
     background-position: center;
     background-blend-mode: overlay;
@@ -338,7 +338,7 @@ p {
     width: 100%;
     top: 0%;
     left: 0;
-    background-image: url(img/pink.gif);
+    background-image: url(../../img/pink.gif);
     background-size: cover;
     visibility: initial;
     opacity: 30%;
