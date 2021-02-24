@@ -1,25 +1,25 @@
 import emailPreview from './email-preview.cmp.js'
 
 export default {
-    props: ['books'],
+    props: ['emails'],
     template: `
-    <ul class="book-list">
-        <li v-for="book in books" :key="book.id" class="book-preview-container" >
-            <book-preview :book="book" @click.native="logId(book.id)" />
+    <ul class="email-list">
+        <li v-for="email in emails" :key="email.id" class="email-preview-container" >
+            <email-preview :email="email" @click.native="logId(email.id)" @click="select(email)" />
             <div class="btns-container">
-                <button @click="remove(book.id)">🗑</button>
-                <router-link tag="button" :to="'/book/'+book.id" >Details</router-link>
+                <button @click="remove(email.id)">🗑</button>
+                <router-link tag="button" :to="'/email/'+email.id" >Details</router-link>
             </div>
         </li>
     </ul>
     `,
     methods: {
-        remove(bookId) {
-            this.$emit('remove', bookId)
+        remove(emailId) {
+            this.$emit('remove', emailId)
         },
-        select(book) {
-            console.log('book:', book.id + ' is selected')
-            this.$emit('selected', book)
+        select(email) {
+            console.log('email:', email.id + ' is selected')
+            this.$emit('selected', email)
         },
         logId(bookId) {
             console.log('Id is', bookId);

@@ -6,8 +6,9 @@ import emailList from '../email-cmps/email-list.cmp.js'
 export default {
     template: `
         <section class="email-app">
-          <email-filter v-if="emails" @filtered="setFilter"/> 
-          <email-list  v-if="emails" :emails="emailsToShow"></email-list> 
+          <email-filter @filtered="setFilter" /> 
+          <email-details @selected="selectEmail" v-if="selectedEmail" /> 
+          <email-list v-else :emails="emailsToShow" />
           <router-link to="">under construction</router-link>
 
         </section>
@@ -15,28 +16,28 @@ export default {
     data() {
         return {
             emails: null,
-            selectedMail: null,
+            selectedEmail: null,
             filterBy: null
         }
     },
     methods: {
-        removeBook(emailId) {
+        removeEmail(emailId) {
             emailService.remove(emailId)
                 .then(() => {
                     emailService.query()
                         .then(emails => this.emails = emails);
                 })
         },
-        selectBook(email) {
+        selectEmail(email) {
             console.log('pook:', email);
-            this.selectedMail = email;
+            this.selectedEmail = email;
         },
         setFilter(filterBy) {
             this.filterBy = filterBy;
         }
     },
     computed: {
-       emailsToShow() {
+        emailsToShow() {
             if (!this.filterBy) return this.emails;
             const searchStr = this.filterBy.byTitle.toLowerCase();
             const emailsToShow = this.emails.filter(email => {
