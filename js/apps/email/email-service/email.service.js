@@ -72,7 +72,8 @@ export const emailService = {
     sendEmail,
     getEmptyEmail,
     removeEmail,
-    getEmailsByFolder
+    getEmailsByFolder,
+    searchByContent
 }
 
 function query() {

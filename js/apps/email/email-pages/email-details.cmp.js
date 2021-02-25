@@ -5,17 +5,11 @@ export default {
     <section class="email-details" v-if="email">
         <p>Subject: {{email.content.subject}}</p> 
         <p>From: {{email.content.from}}</p> 
-        <!-- <p :class="{'read': email.isRead, 'unread': !email.isRead}">Read\Unread: {{email.isRead ? 'Read' : 'Unread'}}</p>  -->
         <p>To: {{email.content.to}}</p> 
         <p>Created \\ Recieved at: {{email.status.timestamp}}</p> 
         <p>Content: {{email.content.msgBody}}</p> 
-        <!-- <p>Reviews: {{email.reviews}}</p>  -->
-        <!-- <button v-if="email.folder.'inbox" @click="">Reply</button> -->
-
-        <!-- <add-review :email="email" v-if="isAddingRev" @newReview="saveRev"/> -->
-
         <button @click="">Edit</button>
-        <router-link to="/"><button>X</button></router-link>
+        <router-link to="/email/:folder"><button>X</button></router-link>
     </section>
     `,
     data() {
