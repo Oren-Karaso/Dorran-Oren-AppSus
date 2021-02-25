@@ -1,18 +1,18 @@
 @import "/css/fonts.css";
 @import "/css/helpers.css";
 .grid-container {
-    margin: 20px auto;
+    margin: 20px;
     display: grid;
     gap: 10px;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    /* grid-auto-rows: 100px; */
     grid-auto-flow: dense;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* grid-template-rows: repeat(autofill, 200px); */
 }
 
 .grid-item {
     box-shadow: 0 0 7px rgba(15, 15, 15, 0.322);
     /* padding: 15px 10px 10px 10px; */
-    background-color: #eeff00ea;
+    /* background-color: #eeff00ea; */
     color: rgb(255, 250, 245);
     width: 100%;
     text-shadow: 2px 2.5px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;

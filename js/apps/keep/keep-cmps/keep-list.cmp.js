@@ -16,6 +16,7 @@ export default {
     methods: {
         remove(noteId) {
             this.$emit('remove', noteId);
+
         },
         select(note) {
             this.$emit('selected', note);
