@@ -1,5 +1,6 @@
 import emailPreview from './email-preview.cmp.js'
 import { emailService } from '../email-service/email.service.js'
+import { eventBus } from '../../../services/event-bus.service.js'
 
 export default {
     template: `
@@ -27,20 +28,30 @@ export default {
                     console.log('email has been removed');
                 })
         },
-    },
-    logId(emailId) {
-        console.log('Id is', emailId);
-    },
+        emailsToShow(filterBy) {
+            if (!filterBy || filterBy === '') this.refreshDisplay();
+            const searchStr = filterBy.toLowerCase();
+            const emailsToShow = emailService.searchByContent(this.emails, searchStr);
+            this.emails = emailsToShow;
+        },
+        refreshDisplay() {
+            emailService.query()
+                .then(emails => {
+                    this.emails = emails
+                    console.log('emails from list:', this.emails);
+                });
+        },
 
+        logId(emailId) {
+            console.log('Id is', emailId);
+        },
+    },
     components: {
         emailPreview
     },
     created() {
-        return emailService.query()
-            .then(emails => {
-                this.emails = emails
-                console.log('emails from list:', this.emails);
-            });
+        this.refreshDisplay();
+        eventBus.$on('filtered', this.emailsToShow)
     }
 }
 
