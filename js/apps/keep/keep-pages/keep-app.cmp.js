@@ -39,8 +39,10 @@ export default {
         },
         addNote(content) {
             keepService.createKeep(this.newNoteType, content);
-            keepService.query()
-                .then(notes => this.notes = notes);
+            setTimeout(() => {
+                keepService.query()
+                    .then(notes => this.notes = notes);
+            }, 0)
 
 
         },

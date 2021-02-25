@@ -144,7 +144,7 @@ function createKeep(keepType, content) {
             txt: content
         }
     }
-    addKeep(note);
+    storageService.post(KEEP_KEY, note);
     return note;
 }
 
