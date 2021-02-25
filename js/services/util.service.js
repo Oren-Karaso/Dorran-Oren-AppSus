@@ -1,3 +1,8 @@
+export const utilService = {
+    getRandomInt,
+    makeLorem,
+    makeId
+}
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -31,11 +36,6 @@ function makeLorem(length) {
     return randStr;
 }
 
-export const utilService = {
-    getRandomInt,
-    makeLorem,
-    makeId
-}
 
 
 function _getRandChar() {

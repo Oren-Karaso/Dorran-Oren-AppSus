@@ -20,7 +20,6 @@ export default {
     `,
     data() {
         return {
-            selectedEmail: null,
             email: null,
             // msgBodyToShow: null
         }
@@ -54,7 +53,9 @@ export default {
         }
     },
     computed: {
-
+        // showExactDate() {
+        //     return (this.email.status.timestamp).toLocaleString;
+        // }
     },
 
     created() {

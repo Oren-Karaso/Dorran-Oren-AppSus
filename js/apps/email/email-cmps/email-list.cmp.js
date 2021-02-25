@@ -31,14 +31,16 @@ export default {
     logId(emailId) {
         console.log('Id is', emailId);
     },
+
+    components: {
+        emailPreview
+    },
     created() {
         return emailService.query()
             .then(emails => {
                 this.emails = emails
                 console.log('emails from list:', this.emails);
-            })
-    },
-    components: {
-        emailPreview
+            });
     }
 }
+
