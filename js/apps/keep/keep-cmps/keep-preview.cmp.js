@@ -1,4 +1,8 @@
 import { eventBus } from '../../../services/event-bus.service.js';
+import keepImg from './keep-types/keep-img.cmp.js';
+import keepVideo from './keep-types/keep-video.cmp.js';
+import keepTodos from './keep-types/keep-todos.cmp.js';
+import keepTxt from './keep-types/keep-text.cmp.js';
 
 export default {
     props: ['note'],
@@ -7,10 +11,11 @@ export default {
         <section class="note">
             <!-- <p class="note-title">{{note}}</p> -->
             <p v-if="note.info.title" class="note-title">{{note.info.title}}</p>
-            <img v-if="note.info.url" class="note-img" :src="note.info.url">
-            <p v-if="note.info.txt" class="note-title">{{note.info.txt}}</p>
+            <component :note="note" :is="keepType"></component>
+            <!-- <img v-if="note.info.url" class="note-img" :src="note.info.url"> -->
+            <!-- <p v-if="note.info.txt" class="note-title">{{note.info.txt}}</p>
             <p v-if="note.info.todos" class="note-title">{{note.info.todos}}</p>
-            <p v-if="note.info.todos" class="note-title">{{note.info.todos.txt}}</p>
+            <p v-if="note.info.todos" class="note-title">{{note.info.todos.txt}}</p> -->
             <!-- <p class="note-title">{{note}}</p>
             <p class="note-title">{{note}}</p>
             <p class="note-title">{{note}}</p> -->
@@ -24,6 +29,11 @@ export default {
         
     </section>
     `,
+    data() {
+        return {
+            keepType: this.note.type,
+        }
+    },
     methods: {
         removeNote(note) {
             eventBus.$emit('remove', this.note);
@@ -43,7 +53,11 @@ export default {
         }
     },
     components: {
-        eventBus
+        eventBus,
+        keepImg,
+        keepVideo,
+        keepTodos,
+        keepTxt
     }
 
 }
