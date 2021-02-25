@@ -50,9 +50,9 @@ export default {
         },
 
         filter(emails, filterByRead) {
-            emailService.query()
+            emailService.query()       // didn't work with refreshDisplay
                 .then(emails => {
-                    this.emails = emails
+                    this.emails = emails;
                     const filteredEmails = emailService.filterByReadUnRead(emails, filterByRead);
                     this.filterByRead = !this.filterByRead;
                     this.emails = filteredEmails;
