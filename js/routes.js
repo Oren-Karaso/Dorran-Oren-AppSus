@@ -5,8 +5,7 @@ import emailApp from './apps/email/email-pages/email-app.cmp.js';
 import emailDetails from './apps/email/email-pages/email-details.cmp.js';
 import emailList from './apps/email/email-cmps/email-list.cmp.js';
 
-const routes = [
-    { 
+const routes = [{
         path: '/',
         component: homePage,
     },
@@ -28,8 +27,7 @@ const routes = [
         path: '/email',
         name: emailApp,
         component: emailApp,
-        children: [
-            {
+        children: [{
                 path: ':folder',
                 name: emailList,
                 component: emailList
@@ -41,7 +39,7 @@ const routes = [
             }
         ]
     },
-        
+
 
 ]
 
