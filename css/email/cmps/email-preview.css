@@ -1,2 +1,10 @@
 @import "/css/fonts.css";
 @import "/css/helpers.css";
+
+* {
+    box-sizing: border-box;
+}
+
+.email-preview {
+    /* border-bottom: 20px; */
+}

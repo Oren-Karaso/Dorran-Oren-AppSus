@@ -38,7 +38,7 @@ export default {
             emailService.query()
                 .then(emails => {
                     this.emails = emails
-                    console.log('emails from list:', this.emails);
+                    // console.log('emails from list:', this.emails);
                 });
         },
 
@@ -51,7 +51,10 @@ export default {
     },
     created() {
         this.refreshDisplay();
-        eventBus.$on('filtered', this.emailsToShow)
+        eventBus.$on('filtered', this.emailsToShow);
+    },
+    distroyed() {
+        eventBus.$off('filtered');
     }
 }
 
