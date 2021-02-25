@@ -19,7 +19,7 @@ function query() {
             if (!notes.length) {
                 notes = [{
                         id: utilService.makeId(),
-                        type: "noteTxt",
+                        type: "keepTxt",
                         isPinned: true,
                         info: {
                             txt: "Fullstack Me Baby!"
@@ -29,7 +29,7 @@ function query() {
                     },
                     {
                         id: utilService.makeId(),
-                        type: "noteImg",
+                        type: "keepImg",
                         info: {
                             url: "https://memegenerator.net/img/instances/69508134/i-know-vuejs.jpg",
                             title: "Me playing Mi"
@@ -40,7 +40,7 @@ function query() {
                     },
                     {
                         id: utilService.makeId(),
-                        type: "noteTodos",
+                        type: "keepTodos",
                         info: {
                             label: "How was it:",
                             todos: [
@@ -118,13 +118,34 @@ function createKeep(keepType) {
         id: utilService.makeId(),
         type: keepType,
         isPinned: false,
-        info: {
+        style: { backgroundColor: '#eeff00ea' }
+    }
+
+    if (keepType === 'keepVideo' || keepType === 'keepImg') {
+        note.info = {
             url: null,
             title: null,
+        }
 
-            txt: null,
-        },
-        style: { backgroundColor: '#eeff00ea' }
+    }
+    if (keepType === 'keepTodo') {
+        note.info = {
+            title: null,
+            todo: {
+                lable: null,
+                todos: [{
+                    txt: null,
+                    doneAt: null
+                }]
+            },
+        }
+
+    }
+    if (keepType === 'keepTxt') {
+        note.info = {
+            title: null,
+            txt: null
+        }
     }
     addKeep(note);
     return note;
@@ -138,3 +159,6 @@ function createKeep(keepType) {
 //         doneAt: new Date()
 //     }]
 // },
+//   url: null,
+// title: null,
+// txt: null,
