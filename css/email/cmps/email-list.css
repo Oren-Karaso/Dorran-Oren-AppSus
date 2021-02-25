@@ -1,10 +1,13 @@
 @import "/css/fonts.css";
 @import "/css/helpers.css";
-
 * {
     box-sizing: border-box;
 }
 
-.email-preview-container {
-    /*  */
+button {
+    margin-left: 5px;
+}
+
+.btns-container {
+    margin-bottom: 10px;
 }

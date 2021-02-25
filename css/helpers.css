@@ -63,3 +63,13 @@ button {
 i {
     margin: 0;
 }
+
+.read {
+    font-style: italic;
+    color: rgb(136, 136, 136);
+}
+
+.unread {
+    font-weight:bolder;
+    color: black;
+}

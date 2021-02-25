@@ -3,7 +3,7 @@ import { eventBus } from '../../../services/event-bus.service.js'
 export default {
     template: `
     <section class="email-filter">
-        <label class="search-by"> Search an email: </label>    
+        <label class="search-by"> Search by content: </label>    
         <input type="text" @input="setFilter" placeholder="Search...." v-model="filterBy.byContent">
     </section>
     `,

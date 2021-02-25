@@ -54,7 +54,7 @@ export default {
         eventBus.$on('filtered', this.emailsToShow);
     },
     distroyed() {
-        eventBus.$off('filtered');
+        eventBus.$off('filtered', this.emailsToShow);
     }
 }
 
