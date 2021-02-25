@@ -6,3 +6,14 @@
     align-items: center;
     justify-content: center;
 }
+
+.compose-btns {
+    margin: 10px 0;
+    font-size: 1.17rem;
+}
+
+.compose-btn button {
+    background-color: none;
+    border: none;
+    font-size: 1.2rem;
+}
