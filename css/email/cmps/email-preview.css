@@ -1,2 +1,17 @@
 @import "/css/fonts.css";
 @import "/css/helpers.css";
+
+* {
+    box-sizing: border-box;
+}
+
+.read {
+    font-style: italic;
+    color: rgb(136, 136, 136);
+}
+
+.unread {
+    font-weight:bolder;
+    color: black;
+}
+

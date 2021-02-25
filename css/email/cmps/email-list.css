@@ -1,11 +1,13 @@
 @import "/css/fonts.css";
 @import "/css/helpers.css";
-
 * {
     box-sizing: border-box;
 }
 
-.email-preview-container {
-    /* height: 50px; */
-    /* width: fit-content; */
+button {
+    margin-left: 5px;
+}
+
+.btns-container {
+    margin-bottom: 10px;
 }
