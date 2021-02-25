@@ -17,24 +17,10 @@ export default {
         return {
             emails: null,
             selectedEmail: null,
-            filterBy: null
         }
     },
     methods: {
-        setFilter(filterBy) {
-            this.filterBy = filterBy;
-        }
-    },
-    computed: {
-        emailsToShow() {
-            if (!this.filterBy) return this.emails;
-            const searchStr = this.filterBy.byTitle.toLowerCase();
-            const emailsToShow = this.emails.filter(email => {
-                return email.title.toLowerCase().includes(searchStr);
-            })
-            return emailsToShow;
-        }
-
+      
     },
     created() {
         this.emails = emailService.query()

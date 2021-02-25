@@ -121,6 +121,11 @@ function getEmailsByFolder(folder) {
         .then(emails => emails.find(email => email.folder === folder))
 }
 
+function searchByContent(emails, searchStr) {
+    return emails.filter(email => {
+        return email.content.msgBody.toLowerCase().includes(searchStr);
+    })
+}
 
 
 
