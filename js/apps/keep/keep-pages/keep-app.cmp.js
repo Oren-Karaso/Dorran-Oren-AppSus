@@ -34,6 +34,11 @@ export default {
                     keepService.query()
                         .then(notes => this.notes = notes);
                 })
+        },
+        addNote(keepType) {
+            keepService.createKeep(keepType);
+            keepService.query()
+                .then(notes => this.notes = notes);
         }
 
     },
@@ -46,10 +51,13 @@ export default {
     created() {
         keepService.query().then(notes => this.notes = notes);
         eventBus.$on('remove', this.removeNote);
+        eventBus.$on('keepType', this.addNote);
 
     },
     destroyed() {
         eventBus.$off('remove', keepService.removeKeep);
+        eventBus.$off('keepType', this.addNote);
+
 
     },
     components: {

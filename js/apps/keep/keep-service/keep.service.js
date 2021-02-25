@@ -19,7 +19,7 @@ function query() {
             if (!notes.length) {
                 notes = [{
                         id: utilService.makeId(),
-                        type: "NoteTxt",
+                        type: "noteTxt",
                         isPinned: true,
                         info: {
                             txt: "Fullstack Me Baby!"
@@ -29,7 +29,7 @@ function query() {
                     },
                     {
                         id: utilService.makeId(),
-                        type: "NoteImg",
+                        type: "noteImg",
                         info: {
                             url: "https://memegenerator.net/img/instances/69508134/i-know-vuejs.jpg",
                             title: "Me playing Mi"
@@ -40,7 +40,7 @@ function query() {
                     },
                     {
                         id: utilService.makeId(),
-                        type: "NoteTodos",
+                        type: "noteTodos",
                         info: {
                             label: "How was it:",
                             todos: [
@@ -113,24 +113,28 @@ function addKeep(note) {
 }
 
 
-function createKeep() {
+function createKeep(keepType) {
     var note = {
         id: utilService.makeId(),
-        type: null,
+        type: keepType,
         isPinned: false,
         info: {
             url: null,
             title: null,
-            todo: {
-                lable: null,
-                todos: [{
-                    txt: null,
-                    doneAt: new Date()
-                }]
-            },
+
             txt: null,
         },
         style: { backgroundColor: '#eeff00ea' }
     }
+    addKeep(note);
     return note;
 }
+
+// if note.type TODOS: note.info.todo ==>
+//   todo: {
+//     lable: null,
+//     todos: [{
+//         txt: null,
+//         doneAt: new Date()
+//     }]
+// },
