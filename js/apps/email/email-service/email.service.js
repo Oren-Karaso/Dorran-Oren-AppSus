@@ -14,6 +14,8 @@ const gEmails = [
         content: {
             to: 'Ima',
             from: 'Aba',
+            cc: null,
+            bss: null,
             subject: 'I love you',
             msgBody: 'Can you please stop by the grocery store and bring some potatos?'
         }
@@ -29,6 +31,8 @@ const gEmails = [
         content: {
             to: 'Aba',
             from: 'Ima',
+            cc: null,
+            bss: null,
             subject: 'The dog',
             msgBody: 'I will bring the potatos, can you take the dog for a walk?'
         }
@@ -44,6 +48,8 @@ const gEmails = [
         content: {
             to: 'Saba',
             from: 'Savta',
+            cc: null,
+            bss: null,
             subject: 'I am no technophob',
             msgBody: 'Aren\'t you impressed by me sending emails like a pro?'
         }
@@ -59,6 +65,8 @@ const gEmails = [
         content: {
             to: 'Savta',
             from: 'Saba',
+            cc: null,
+            bss: null,
             subject: 'I am impressed indeed',
             msgBody: 'Now the only thing left for you is to learn using ZOOM!'
         }
@@ -108,6 +116,8 @@ function getEmptyEmail() {
         content: {
             to: '',
             from: '',
+            cc: null,
+            bss: null,
             subject: '',
             msgBody: ''
         }
