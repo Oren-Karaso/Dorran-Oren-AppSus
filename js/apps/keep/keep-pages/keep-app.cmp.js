@@ -55,7 +55,7 @@ export default {
 
     },
     destroyed() {
-        eventBus.$off('remove', keepService.removeKeep);
+        eventBus.$off('remove', this.removeNote);
         eventBus.$off('keepType', this.addNote);
 
 
