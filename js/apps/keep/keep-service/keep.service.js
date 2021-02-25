@@ -109,11 +109,11 @@ function removeKeep(note) {
 //     return notes;
 // }
 function addKeep(note) {
-    storageService.post(KEEP_KEY, note)
+    storageService.post(KEEP_KEY, note);
 }
 
 
-function createKeep(keepType) {
+function createKeep(keepType, content) {
     var note = {
         id: utilService.makeId(),
         type: keepType,
@@ -123,7 +123,7 @@ function createKeep(keepType) {
 
     if (keepType === 'keepVideo' || keepType === 'keepImg') {
         note.info = {
-            url: null,
+            url: content,
             title: null,
         }
 
@@ -133,10 +133,7 @@ function createKeep(keepType) {
             title: null,
             todo: {
                 lable: null,
-                todos: [{
-                    txt: null,
-                    doneAt: null
-                }]
+                todos: [content]
             },
         }
 
@@ -144,7 +141,7 @@ function createKeep(keepType) {
     if (keepType === 'keepTxt') {
         note.info = {
             title: null,
-            txt: null
+            txt: content
         }
     }
     addKeep(note);
