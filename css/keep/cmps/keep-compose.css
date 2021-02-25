@@ -5,17 +5,38 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: rgb(255, 250, 245);
+    text-shadow: 2px 2.5px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
-.compose-btns {
-    margin: 10px;
-    font-size: 1.17rem;
+.compose-container {
+    background-color: rgb(56, 53, 63);
+    padding: 0 10px;
+    border-radius: 10px;
+    align-items: center;
 }
 
 .compose-btn button {
     background-color: none;
     border: none;
     font-size: 1.2rem;
+}
+
+.compose input {
+    width: fit-content;
+    border: none;
+    font-size: 1.2rem;
+}
+
+.compose-btns i {
+    margin: 0 10px;
+    font-size: 1.2rem;
+}
+
+.compose-btns i:hover {
+    cursor: pointer;
+    color: rgba(240, 240, 240, 0.767);
+    /* color: rgb(255, 94, 107); */
 }
 
 

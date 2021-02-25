@@ -133,9 +133,10 @@ function createKeep(keepType, content) {
             title: null,
             todo: {
                 lable: null,
-                todos: [content]
+                todos: []
             },
         }
+
 
     }
     if (keepType === 'keepTxt') {
