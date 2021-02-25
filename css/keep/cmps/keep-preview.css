@@ -12,18 +12,25 @@
     /* color: rgb(255, 94, 107); */
 }
 
+.note-preview {
+    width: 100%;
+}
 
-/* .note-preview {
-} */
+.note-preview p {
+    word-wrap: break-word;
+}
 
 .note {
+    width: 100%;
     display: flex;
     padding: 15px 15px 10px 15px;
     justify-content: space-between;
     flex-direction: column;
+    /* overflow-wrap: break-word; */
     /* width: 100%; */
 }
 
 .note-img {
-    width: 200px;
+    width: 100%;
+    margin: 5px auto;
 }
