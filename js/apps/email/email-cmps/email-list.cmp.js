@@ -16,7 +16,6 @@ export default {
     data() {
         return {
             emails: null,
-            filterBy: null
         }
     },
     methods: {
@@ -32,27 +31,16 @@ export default {
     logId(emailId) {
         console.log('Id is', emailId);
     },
-    setFilter(filterBy) {
-        this.filterBy = filterBy;
+
+    components: {
+        emailPreview
     },
-
-    computed: {
-        emailsToShow() {
-            if (!this.filterBy) return this.emails;
-            const searchStr = this.filterBy.byTitle.toLowerCase();
-            const emailsToShow = emailService.searchByContent(this.emails, searchStr);
-            return emailsToShow;
-        },
-
-        components: {
-            emailPreview
-        },
-        created() {
-            return emailService.query()
-                .then(emails => {
-                    this.emails = emails
-                    console.log('emails from list:', this.emails);
-                })
-        }
+    created() {
+        return emailService.query()
+            .then(emails => {
+                this.emails = emails
+                console.log('emails from list:', this.emails);
+            });
     }
 }
+

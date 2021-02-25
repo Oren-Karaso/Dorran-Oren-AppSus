@@ -1,8 +1,5 @@
 import { emailService } from '../email-service/email.service.js'
 import emailFilter from '../email-cmps/email-filter.cmp.js'
-import emailList from '../email-cmps/email-list.cmp.js'
-import emailDetails from '../email-pages/email-details.cmp.js'
-
 
 export default {
     template: `
@@ -17,29 +14,39 @@ export default {
         return {
             emails: null,
             selectedEmail: null,
+            filterBy: null
         }
     },
     methods: {
-      
+        setFilter(filterBy) {
+            this.filterBy = filterBy;
+        }
     },
-    created() {
-        this.emails = emailService.query()
-            .then(emails => {
-                this.emails = emails
-            })
-            .catch(err => {
-                console.log('error loading emails from emailApp:', err);
-            });
+    computed: {
+        emailsToShow() {
+            if (!this.filterBy) return this.emails;
+            const searchStr = this.filterBy.toLowerCase();
+            const emailsToShow = emailService.searchByContent(this.emails, searchStr);
+            return emailsToShow;
+        },
     },
-    // watch: {
-    //     '$route.params.bookId'(id) {
-    //         console.log('Changed to', id);
-    //         this.booksToShow();
-    //     }
-    // },
-    components: {
-        emailFilter,
-        emailList,
-        emailDetails
+
+        created() {
+            this.emails = emailService.query()
+                .then(emails => {
+                    this.emails = emails
+                })
+                .catch(err => {
+                    console.log('error loading emails from emailApp:', err);
+                });
+        },
+        // watch: {
+        //     '$route.params.bookId'(id) {
+        //         console.log('Changed to', id);
+        //         this.booksToShow();
+        //     }
+        // },
+        components: {
+            emailFilter
+        }
     }
-}
