@@ -1,7 +1,9 @@
 export default {
 
     template: `
-      <input type="search">        
+      <section class="compose">
+          <input type="text" placeholder="Add Keep">
+      </section>
     `,
     methods: {
         remove(noteId) {

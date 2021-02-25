@@ -8,4 +8,6 @@
 @import "/css/keep/cmps/keep-edit.css";
 @import "/css/keep/cmps/keep-filter.css";
 @import "/css/keep/cmps/keep-preview.css";
-@import "/css/keep/cmps/keep-header.css";
+.keep-app {
+    flex-direction: column;
+}
