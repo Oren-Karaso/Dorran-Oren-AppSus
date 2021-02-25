@@ -2,12 +2,12 @@ import { emailService } from '../email-service/email.service.js'
 
 export default {
     template: `
-    <section class="email-details">
+    <section class="email-details" v-if="email">
         <p>Subject: {{email.content.subject}}</p> 
         <p>From: {{email.content.from}}</p> 
         <!-- <p :class="{'read': email.isRead, 'unread': !email.isRead}">Read\Unread: {{email.isRead ? 'Read' : 'Unread'}}</p>  -->
         <p>To: {{email.content.to}}</p> 
-        <p>Created\Recieved at: {{email.timestamp.getFullYear}}</p> 
+        <p>Created \\ Recieved at: {{email.status.timestamp}}</p> 
         <p>Content: {{email.content.msgBody}}</p> 
         <!-- <p>Reviews: {{email.reviews}}</p>  -->
         <!-- <button v-if="email.folder.'inbox" @click="">Reply</button> -->
@@ -15,7 +15,7 @@ export default {
         <!-- <add-review :email="email" v-if="isAddingRev" @newReview="saveRev"/> -->
 
         <button @click="">Edit</button>
-        <router-link tag="button" to="/">X</router-link>
+        <router-link to="/"><button>X</button></router-link>
     </section>
     `,
     data() {
@@ -59,16 +59,16 @@ export default {
 
     created() {
         const id = this.$route.params.emailId;
+        console.log('id:', id);
 
         emailService.getById(id)
             .then(email => {
                 this.email = email
                 console.log('this email:', this.email)
-                return this.email
             })
             .catch(err => {
                 console.log('Error', err);
-                this.$router.push('/book');
+                this.$router.push('/email');
             });
     },
     components: {

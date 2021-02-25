@@ -9,8 +9,6 @@ export default {
         <section class="email-app">
           <email-filter @filtered="setFilter" /> 
           <router-view />
-          <!-- <email-details @selected="selectEmail" v-if="selectedEmail" />  -->
-          <!-- <email-list v-else :emails="emailsToShow" /> -->
           <router-link to=""></router-link>
 
         </section>
@@ -23,17 +21,6 @@ export default {
         }
     },
     methods: {
-        removeEmail(emailId) {
-            emailService.removeEmail(emailId)
-                .then(() => {
-                    emailService.query()
-                        .then(emails => this.emails = emails);
-                })
-        },
-        selectEmail(email) {
-            console.log('pook:', email);
-            this.selectedEmail = email;
-        },
         setFilter(filterBy) {
             this.filterBy = filterBy;
         }

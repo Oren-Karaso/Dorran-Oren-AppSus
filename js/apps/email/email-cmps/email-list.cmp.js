@@ -7,8 +7,8 @@ export default {
         <li v-if="emails" v-for="email in emails" :key="email.id" class="email-preview-container" >
             <email-preview :email="email" @click.native="logId(email.id)" />
             <div class="btns-container">
-                <button @click="remove(email.id)">🗑</button>
-                <router-link :to="'/email/'+email.id" @click="select(email)"><button>Details</button></router-link>
+                <button @click="removeEmail(email.id)">🗑</button>
+                <router-link :to="'/email/:folder/' +email.id"><button>Details</button></router-link>
             </div>
         </li>
     </ul>
@@ -19,16 +19,17 @@ export default {
         }
     },
     methods: {
-        remove(emailId) {
-            this.$emit('remove', emailId)
+        removeEmail(emailId) {
+            emailService.removeEmail(emailId)
+                .then(() => {
+                    emailService.query()
+                        .then(emails => this.emails = emails);
+                    console.log('email has been removed');
+                })
         },
-        select(email) {
-            console.log('email:', email.id + ' is selected')
-            this.$emit('selected', email)
-        },
-        logId(bookId) {
-            console.log('Id is', bookId);
-        }
+    },
+    logId(emailId) {
+        console.log('Id is', emailId);
     },
     created() {
         return emailService.query()
