@@ -29,27 +29,29 @@ export default {
                 })
         },
         emailsToShow(filterBy) {
-            console.log('filterBy:', filterBy);
-            if (!filterBy) return this.emails;
+            if (!filterBy || filterBy === '') this.refreshDisplay();
             const searchStr = filterBy.toLowerCase();
             const emailsToShow = emailService.searchByContent(this.emails, searchStr);
-           this.emails =  emailsToShow;
+            this.emails = emailsToShow;
+        },
+        refreshDisplay() {
+            emailService.query()
+                .then(emails => {
+                    this.emails = emails
+                    console.log('emails from list:', this.emails);
+                });
+        },
+
+        logId(emailId) {
+            console.log('Id is', emailId);
         },
     },
-    logId(emailId) {
-        console.log('Id is', emailId);
-    },
-
     components: {
         emailPreview
     },
     created() {
-        return emailService.query()
-            .then(emails => {
-                this.emails = emails
-                console.log('emails from list:', this.emails);
-            }),
-            eventBus.$on('filtered', this.emailsToShow)
+        this.refreshDisplay();
+        eventBus.$on('filtered', this.emailsToShow)
     }
 }
 
