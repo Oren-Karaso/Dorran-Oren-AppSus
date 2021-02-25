@@ -1,3 +1,5 @@
+import { eventBus } from '../../../services/event-bus.service.js';
+
 export default {
     props: ['note'],
     template: `
@@ -20,19 +22,21 @@ export default {
     `,
     methods: {
         removeNote(note) {
-            this.$emit('remove', this.note.id);
+            eventBus.$emit('remove', this.note);
             console.log('delete me');
         },
         selectNote(note) {
-            this.$emit('selected', this.note);
+            eventBus.$emit('selected', this.note);
             console.log('edit me');
         },
     },
     computed: {
         bgc() {
-
             return this.note.style.backgroundColor;
         }
     },
+    components: {
+        eventBus
+    }
 
 }

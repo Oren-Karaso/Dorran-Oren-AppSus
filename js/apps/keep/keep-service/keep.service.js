@@ -7,9 +7,9 @@ export const keepService = {
     query,
     getById,
     createKeep,
-    addKeep
+    addKeep,
     // saveKeep,
-    // removeKeep
+    removeKeep
 
 }
 
@@ -82,16 +82,21 @@ function getById(id) {
 //         })
 // }
 
-// function removeReview(noteId, idx) {
-//     return storageService.query(KEEP_KEY)
-//         .then(notes => { return notes })
-//         .then(notes => {
-//             let updatedBook = notes.find(item => item.id === noteId);
-//             updatedBook.reviews.splice(idx, 1);
-//             storageService.put(KEEP_KEY, updatedBook);
-//         })
 
-// }
+
+function removeKeep(noteId, idx) {
+    // return storageService.query(KEEP_KEY)
+    //     .then(notes => { return notes })
+    //     .then(notes => {
+    //         // let removedNote = notes.find(item => item.id === noteId);
+    //         // notes.splice(idx, 1);
+    //         storageService.remove(KEEP_KEY, noteId)
+    //             .then(storageService.query(KEEP_KEY))
+    //     })
+
+    return storageService.remove(KEEP_KEY, noteId);
+
+}
 
 // function createKeeps() {
 //     var notes = [];

@@ -4,6 +4,7 @@ import keepFilter from '../keep-cmps/keep-filter.cmp.js';
 import keepEdit from '../keep-cmps/keep-edit.cmp.js';
 import keepCompose from '../keep-cmps/keep-compose.cmp.js';
 import keepPreview from '../keep-cmps/keep-preview.cmp.js';
+import { eventBus } from '../../../services/event-bus.service.js';
 
 
 
@@ -11,7 +12,7 @@ export default {
     template: `
         <section class="keep-app flex">
 
-        <keep-list :notes="notes" />
+        <keep-list v-if="notes" :notes="notes" />
 
         </section>
         `,
@@ -26,6 +27,13 @@ export default {
         selectNote(note) {
             this.selectedNote = note;
         },
+        removeNote(noteId) {
+            keepService.removeKeep(noteId)
+                .then(() => {
+                    keepService.query()
+                        .then(notes => this.notes = notes);
+                })
+        }
 
     },
     computed: {
@@ -36,6 +44,11 @@ export default {
     },
     created() {
         keepService.query().then(notes => this.notes = notes);
+        eventBus.$on('remove', this.removeNote);
+
+    },
+    destroyed() {
+        eventBus.$off('remove', keepService.removeKeep);
 
     },
     components: {

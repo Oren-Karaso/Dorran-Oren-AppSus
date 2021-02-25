@@ -12,15 +12,13 @@
     /* color: rgb(255, 94, 107); */
 }
 
-.note-preview {
-    justify-content: space-between;
-    flex-direction: column;
-}
-
 .note {
     padding: 15px 15px 10px 15px;
+    /* justify-content: space-between;
+    flex-direction: column; */
+    /* width: 100%; */
 }
 
 .note-img {
-    width: 100%;
+    width: 200px;
 }
