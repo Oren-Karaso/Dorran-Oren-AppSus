@@ -1,49 +1,37 @@
 
 export default {
+    props: ['emptyEmail'],
     template: `
     <section class="email-compose-container">
-    <form @submit.prevent="save">
-            <input type="text" placeholder="Name" v-model="from">
-            <input type="text" placeholder="To" v-model="to">
-            <input type="text" placeholder="Cc" v-model="cc">
-            <input type="text" placeholder="Bcc" v-model="bcc">
-            <input type="text" placeholder="Subject" v-model="subject">
-            <textarea cols="30" rows="10" placeholder="Your email here..." v-model="content"></textarea>
-            <button @click="save">Send</button>
-            <button>Save as draft</button>
+    <form @submit="save">
+            <input type="text" placeholder="Name" v-model="newEmail.content.from">
+            <input type="text" placeholder="To" v-model="newEmail.content.to">
+            <input type="text" placeholder="Cc" v-model="newEmail.content.cc">
+            <input type="text" placeholder="Bcc" v-model="newEmail.content.bcc">
+            <input type="text" placeholder="Subject" v-model="newEmail.content.subject">
+            <textarea cols="30" rows="10" placeholder="Your email here..." v-model="newEmail.content.msgBody"></textarea>
+            <button>Send</button>
+            <!-- <button>Save as draft</button> -->
+            <!-- :folder="emptyEmail.folder -->
         </form> 
     </section>
     `,
     data() {
         return {
-            from: null,
-            to: null,
-            cc: null,
-            bcc: null,
-            subject: null,
-            content: null
-
+            newEmail: this.emptyEmail,
         }
     },
     methods: {
         save() {
-            return {
-                from: this.from,
-                to: this.to,
-                cc: this.cc,
-                bcc: this.bcc,
-                subject: this.subject,
-                content: this.content
-
-            };
-            // console.log('rev:', rev);
-            this.$emit('save', rev);
+            this.newEmail.folder = 'sent';
+            console.log('email to send:', this.newEmail);
+            this.$emit('saved', this.newEmail);
         }
     },
     components: {
     },
     created() {
-
+        // const folder = this.$route.params.folder;
     },
     destroyed() {
     }

@@ -8,7 +8,7 @@ export default {
         <p>To: {{email.content.to}}</p> 
         <p>Created \\ Recieved at: {{email.status.timestamp}}</p> 
         <p>Content: {{email.content.msgBody}}</p> 
-        <button @click="">Edit</button>
+        <button @click="markReadUnRead">{{(!email.status.isRead) ? "Mark As Read" : "Mark As Unread"}}</button>
         <router-link to="/email/:folder"><button>X</button></router-link>
     </section>
     `,
@@ -44,12 +44,20 @@ export default {
                 .catch(err => {
                     console.log('Error sending email:', err);
                 });
+        },
+        markReadUnRead() {
+            this.email.status.isRead = true;
+            emailService.updateStatus(this.email)
+            .then(email => {
+                console.log('email has been mark as read:', email)
+            })
+            .catch(err => {
+                console.log('Error in updating a mail');
+            });
         }
     },
     computed: {
-        // showExactDate() {
-        //     return (this.email.status.timestamp).toLocaleString;
-        // }
+        
     },
 
     created() {
@@ -58,8 +66,7 @@ export default {
 
         emailService.getById(id)
             .then(email => {
-                this.email = email
-                console.log('this email:', this.email)
+                this.email = email;
             })
             .catch(err => {
                 console.log('Error', err);

@@ -6,7 +6,8 @@ import { eventBus } from '../../../services/event-bus.service.js'
 export default {
     template: `
     <section class="main-list-container">
-     <button @click="filter(emails, filterByRead)">{{(filterByRead) ? "read" : "unread"}}</button>
+     <button @click="newEmail" >+ Compose</button>
+     <button @click="filter(emails, filterByRead)">{{(filterByRead) ? "By read" : "By unread"}}</button>
      <ul class="email-list">
         <li v-if="emails" v-for="email in emails" :key="email.id" class="email-preview-container" >
             <email-preview :email="email" @click.native="logId(email.id)" />
@@ -16,7 +17,6 @@ export default {
             </div>
         </li>
      </ul>
-     <button @click="newEmail" >+ Compose</button>
      <email-compose v-if="emptyEmail" @saved="sendAnEmail" :emptyEmail="emptyEmail" />
     </section>
     `,
@@ -66,12 +66,10 @@ export default {
         },
         newEmail() {
             this.emptyEmail = emailService.getEmptyEmail()
-        },       
+        },
         sendAnEmail(email) {
             emailService.sendEmail(email)
-                .then(email => {
-                    console.log('email sent:', email);
-                })
+                .then(email => console.log('email sent:', email))
                 .catch(err => console.log('Error in sending email'));
         }
     },

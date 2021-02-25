@@ -10,7 +10,7 @@ const gEmails = [
             isRead: false,
             timestamp: new Date()
         },
-        folder: 'draft',
+        folder: 'inbox',
         content: {
             to: 'Ima',
             from: 'Aba',
@@ -27,7 +27,7 @@ const gEmails = [
             isRead: true,
             timestamp: new Date()
         },
-        folder: 'sent',
+        folder: 'inbox',
         content: {
             to: 'Aba',
             from: 'Ima',
@@ -61,7 +61,7 @@ const gEmails = [
             isRead: true,
             timestamp: new Date()
         },
-        folder: 'trash',
+        folder: 'inbox',
         content: {
             to: 'Savta',
             from: 'Saba',
@@ -82,7 +82,8 @@ export const emailService = {
     removeEmail,
     getEmailsByFolder,
     searchByContent,
-    filterByReadUnRead
+    filterByReadUnRead,
+    updateStatus
 }
 
 function query() {
@@ -96,8 +97,11 @@ function query() {
 }
 
 function sendEmail(email) {
-    if (email.id) return storageService.put(EMAIL_KEY, email);
-    else return storageService.post(EMAIL_KEY, email);
+    return storageService.post(EMAIL_KEY, email);
+}
+
+function updateStatus(email) {
+   return storageService.put(EMAIL_KEY, email);
 }
 
 function getById(id) {
@@ -139,7 +143,7 @@ function searchByContent(emails, searchStr) {
     })
 }
 function filterByReadUnRead(emails, boolean) {
-    
+
     return emails.filter(email => {
         return (email.status.isRead === boolean);
     })
