@@ -5,16 +5,20 @@ export default {
     template: `
     <section class="note-preview flex" :style="{ backgroundColor: bgc }">
         <section class="note">
-            <p class="note-title">{{note}}</p>
+            <!-- <p class="note-title">{{note}}</p> -->
             <p v-if="note.info.title" class="note-title">{{note.info.title}}</p>
             <img v-if="note.info.url" class="note-img" :src="note.info.url">
-            <!-- <p v-if="note.title" class="note-title">{{note}}</p> -->
+            <p v-if="note.info.txt" class="note-title">{{note.info.txt}}</p>
+            <p v-if="note.info.todos" class="note-title">{{note.info.todos}}</p>
+            <p v-if="note.info.todos" class="note-title">{{note.info.todos.txt}}</p>
             <!-- <p class="note-title">{{note}}</p>
             <p class="note-title">{{note}}</p>
             <p class="note-title">{{note}}</p> -->
             <section class="note-btns flex">
                 <div @click="removeNote" class="delete-note"><i class="fas fa-trash-alt"></i></div>
                 <div @click="selectNote" class="edit-note"><i class="fas fa-edit"></i></div>
+                <div @click="selectNote" class="edit-color"><i class="fas fa-palette"></i></div>
+                <div @click="selectNote" class="pin"><i class="fas fa-thumbtack"></i></div>
             </section>
         </section>
         
@@ -29,6 +33,9 @@ export default {
             eventBus.$emit('selected', this.note);
             console.log('edit me');
         },
+        changeColor() {
+
+        }
     },
     computed: {
         bgc() {

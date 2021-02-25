@@ -28,8 +28,8 @@ export default {
         selectNote(note) {
             this.selectedNote = note;
         },
-        removeNote(noteId) {
-            keepService.removeKeep(noteId)
+        removeNote(note) {
+            keepService.removeKeep(note)
                 .then(() => {
                     keepService.query()
                         .then(notes => this.notes = notes);

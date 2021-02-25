@@ -84,7 +84,7 @@ function getById(id) {
 
 
 
-function removeKeep(noteId, idx) {
+function removeKeep(note) {
     // return storageService.query(KEEP_KEY)
     //     .then(notes => { return notes })
     //     .then(notes => {
@@ -93,8 +93,9 @@ function removeKeep(noteId, idx) {
     //         storageService.remove(KEEP_KEY, noteId)
     //             .then(storageService.query(KEEP_KEY))
     //     })
+    console.log('id:', note.id)
 
-    return storageService.remove(KEEP_KEY, noteId);
+    return storageService.remove(KEEP_KEY, note.id);
 
 }
 
