@@ -48,6 +48,11 @@ export default {
         },
         noteType(keepType) {
             this.newNoteType = keepType;
+        },
+        updateNote(note) {
+            // make a function that uses storage service - put
+            // to update note
+
         }
 
     },
@@ -62,6 +67,7 @@ export default {
         eventBus.$on('remove', this.removeNote);
         eventBus.$on('keepType', this.noteType);
         eventBus.$on('content', this.addNote);
+        eventBus.$on('update', this.updateNote);
 
 
     },
@@ -69,6 +75,7 @@ export default {
         eventBus.$off('remove', this.removeNote);
         eventBus.$off('keepType', this.addNote);
         eventBus.$off('content', this.content);
+        eventBus.$off('update', this.updateNote);
 
 
 

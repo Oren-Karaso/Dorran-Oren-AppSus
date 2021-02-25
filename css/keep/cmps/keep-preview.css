@@ -4,6 +4,7 @@
 
 .note-btns i {
     margin-inline-end: 10px;
+    z-index: 1;
 }
 
 .note-btns i:hover {
@@ -34,4 +35,23 @@
 .note-img {
     width: 100%;
     margin: 5px auto;
+}
+
+.edit-color-input {
+    height: 30px;
+    width: 30px;
+    box-sizing: content-box;
+    position: relative;
+    font-size: 1rem;
+    margin: 0;
+    margin-top: 10px;
+    /* margin-bottom: 20px; */
+    /* top: 30px;
+    right: 20px; */
+}
+
+.edit-color {
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
 }

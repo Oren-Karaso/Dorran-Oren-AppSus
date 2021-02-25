@@ -1,7 +1,10 @@
 export default {
     props: ['note'],
     template: `
-    <!-- <img v-if="note.info.url" class="note-img" :src="note.info.url"> -->
+    <section>
+        <p v-if="note.info.todos" v-for="todo in note.info.todos" class="note-title">{{todo.txt}}</p> 
+    </section>
+
 
 `,
 

@@ -7,7 +7,7 @@ export const keepService = {
     query,
     getById,
     createKeep,
-    addKeep,
+    // addKeep,
     // saveKeep,
     removeKeep
 
@@ -99,18 +99,10 @@ function removeKeep(note) {
 
 }
 
-// function createKeeps() {
-//     var notes = [];
-//     for (let index = 0; index < 20; index++) {
-//         var note = createBook();
-//         notes.push(note);
 
-//     }
-//     return notes;
+// function addKeep(note) {
+//     storageService.post(KEEP_KEY, note);
 // }
-function addKeep(note) {
-    storageService.post(KEEP_KEY, note);
-}
 
 
 function createKeep(keepType, content) {
