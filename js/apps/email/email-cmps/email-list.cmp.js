@@ -16,13 +16,15 @@ export default {
             </div>
         </li>
      </ul>
-     <email-compose @saved="" />
+     <button @click="newEmail" >+ Compose</button>
+     <email-compose v-if="emptyEmail" @saved="sendAnEmail" :emptyEmail="emptyEmail" />
     </section>
     `,
     data() {
         return {
             emails: null,
             filterByRead: true,
+            emptyEmail: null
         }
     },
     methods: {
@@ -33,6 +35,7 @@ export default {
                         .then(emails => this.emails = emails);
                     console.log('email has been removed');
                 })
+                .catch(err => console.log('Error in removing email'));
         },
         emailsToShow(filterBy) {
             if (!filterBy || filterBy === '') this.refreshDisplay();
@@ -58,7 +61,18 @@ export default {
                     const filteredEmails = emailService.filterByReadUnRead(emails, filterByRead);
                     this.filterByRead = !this.filterByRead;
                     this.emails = filteredEmails;
-                });
+                })
+                .catch(err => console.log('Error in filtering emails'));
+        },
+        newEmail() {
+            this.emptyEmail = emailService.getEmptyEmail()
+        },       
+        sendAnEmail(email) {
+            emailService.sendEmail(email)
+                .then(email => {
+                    console.log('email sent:', email);
+                })
+                .catch(err => console.log('Error in sending email'));
         }
     },
     components: {
