@@ -1,10 +1,12 @@
 import { emailService } from '../email-service/email.service.js'
 import emailFilter from '../email-cmps/email-filter.cmp.js'
+import emailSideBar from '../email-cmps/email-sidebar.cmp.js'
 
 export default {
     template: `
         <section class="email-app">
           <email-filter @filtered="setFilter" /> 
+          <side-bar class="side-bar" />
           <router-view />
           <router-link to=""></router-link>
 
@@ -47,6 +49,7 @@ export default {
         //     }
         // },
         components: {
-            emailFilter
+            emailFilter,
+            emailSideBar
         }
     }

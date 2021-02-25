@@ -25,6 +25,7 @@ const routes = [{
     },
     {
         path: '/email',
+        redirect: '/email/inbox',
         name: 'emailApp',
         component: emailApp,
         children: [{

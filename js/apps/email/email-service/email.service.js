@@ -73,7 +73,8 @@ export const emailService = {
     getEmptyEmail,
     removeEmail,
     getEmailsByFolder,
-    searchByContent
+    searchByContent,
+    filterByReadUnRead
 }
 
 function query() {
@@ -125,6 +126,12 @@ function getEmailsByFolder(folder) {
 function searchByContent(emails, searchStr) {
     return emails.filter(email => {
         return email.content.msgBody.toLowerCase().includes(searchStr);
+    })
+}
+function filterByReadUnRead(emails, boolean) {
+    
+    return emails.filter(email => {
+        return (email.status.isRead === boolean);
     })
 }
 
