@@ -4,7 +4,9 @@ import { eventBus } from '../../../services/event-bus.service.js'
 
 export default {
     template: `
-    <ul class="email-list">
+    <section class="main-list-container">
+     <button @click="filter(emails, filterByRead)">{{(filterByRead) ? "read" : "unread"}}</button>
+     <ul class="email-list">
         <li v-if="emails" v-for="email in emails" :key="email.id" class="email-preview-container" >
             <email-preview :email="email" @click.native="logId(email.id)" />
             <div class="btns-container">
@@ -12,11 +14,13 @@ export default {
                 <router-link :to="'/email/:folder/' +email.id"><button>Details</button></router-link>
             </div>
         </li>
-    </ul>
+     </ul>
+    </section>
     `,
     data() {
         return {
             emails: null,
+            filterByRead: true,
         }
     },
     methods: {
@@ -38,13 +42,22 @@ export default {
             emailService.query()
                 .then(emails => {
                     this.emails = emails
-                    // console.log('emails from list:', this.emails);
                 });
         },
 
         logId(emailId) {
             console.log('Id is', emailId);
         },
+
+        filter(emails, filterByRead) {
+            emailService.query()
+                .then(emails => {
+                    this.emails = emails
+                    const filteredEmails = emailService.filterByReadUnRead(emails, filterByRead);
+                    this.filterByRead = !this.filterByRead;
+                    this.emails = filteredEmails;
+                });
+        }
     },
     components: {
         emailPreview
@@ -53,7 +66,7 @@ export default {
         this.refreshDisplay();
         eventBus.$on('filtered', this.emailsToShow);
     },
-    distroyed() {
+    destroyed() {
         eventBus.$off('filtered', this.emailsToShow);
     }
 }

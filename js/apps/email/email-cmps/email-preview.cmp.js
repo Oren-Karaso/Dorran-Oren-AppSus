@@ -2,14 +2,22 @@ export default {
     props: ['email'],
     template: `
     <section class="email-preview">
-        <p class ="from">From: {{email.content.from }} {{showEmailAddress}}</p>
-        <p class="subject" :class="{'read': email.status.isRead, 'unread': !email.status.isRead}">Subject: {{email.content.subject}}</p>
+        <p class ="from">From: {{email.content.from }} <span>{{showEmailAddress}}</span></p>
+        <p class="subject">Subject: <span :class="{'read': email.status.isRead, 'unread': !email.status.isRead}">{{email.content.subject}}</span></p>
     </section>
     `,
+    data() {
+        return {
+           
+        }
+    },
+    methods: {
+       
+    },
     computed: {
-       showEmailAddress() {
-           return  (this.email.content.from).toLowerCase() + '@gmail.com';
-       }
+        showEmailAddress() {
+            return '<' + (this.email.content.from).toLowerCase() + '@gmail.com>';
+        }
     },
 }
 
