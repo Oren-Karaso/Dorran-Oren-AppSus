@@ -15,26 +15,26 @@ const routes = [{
     // },
     {
         path: '/book',
-        name: bookApp,
+        name: 'bookApp',
         component: bookApp
     },
     {
         path: '/keep',
-        name: keepApp,
+        name: 'keepApp',
         component: keepApp
     },
     {
         path: '/email',
-        name: emailApp,
+        name: 'emailApp',
         component: emailApp,
         children: [{
                 path: ':folder',
-                name: emailList,
+                name: 'emailList',
                 component: emailList
             },
             {
                 path: ':folder/:emailId',
-                name: emailDetails,
+                name: 'emailDetails',
                 component: emailDetails
             }
         ]

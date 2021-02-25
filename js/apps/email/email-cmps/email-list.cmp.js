@@ -4,11 +4,11 @@ import { emailService } from '../email-service/email.service.js'
 export default {
     template: `
     <ul class="email-list">
-        <li v-for="email in emails" :key="email.id" class="email-preview-container" >
+        <li v-if="emails" v-for="email in emails" :key="email.id" class="email-preview-container" >
             <email-preview :email="email" @click.native="logId(email.id)" />
             <div class="btns-container">
                 <button @click="remove(email.id)">🗑</button>
-                <router-link tag="button" :to="'/email/'+email.id" @click="select(email)">Details</router-link>
+                <router-link :to="'/email/'+email.id" @click="select(email)"><button>Details</button></router-link>
             </div>
         </li>
     </ul>
