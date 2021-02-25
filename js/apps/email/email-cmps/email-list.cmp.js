@@ -1,4 +1,5 @@
 import emailPreview from './email-preview.cmp.js'
+import emailCompose from './email-compose.cmp.js'
 import { emailService } from '../email-service/email.service.js'
 import { eventBus } from '../../../services/event-bus.service.js'
 
@@ -15,6 +16,7 @@ export default {
             </div>
         </li>
      </ul>
+     <email-compose @saved="" />
     </section>
     `,
     data() {
@@ -60,7 +62,8 @@ export default {
         }
     },
     components: {
-        emailPreview
+        emailPreview,
+        emailCompose
     },
     created() {
         this.refreshDisplay();
