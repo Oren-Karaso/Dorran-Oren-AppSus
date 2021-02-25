@@ -11,7 +11,7 @@ import { eventBus } from '../../../services/event-bus.service.js';
 export default {
     template: `
         <section class="keep-app flex">
-
+        <keep-compose/>
         <keep-list v-if="notes" :notes="notes" />
 
         </section>
