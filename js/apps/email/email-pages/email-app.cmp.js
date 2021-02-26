@@ -5,8 +5,8 @@ import emailSidebar from '../email-cmps/email-sidebar.cmp.js'
 export default {
     template: `
         <section class="email-app">
-          <email-filter @filtered="setFilter" /> 
           <email-sidebar class="side-bar" />
+          <email-filter @filtered="setFilter" /> 
           <router-view />
           <router-link to=""></router-link>
 

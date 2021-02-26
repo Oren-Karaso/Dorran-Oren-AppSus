@@ -13,7 +13,7 @@ export default {
             <email-preview :email="email" @click.native="logId(email.id)" />
             <div class="btns-container">
                 <button @click="removeEmail(email.id)">🗑</button>
-                <router-link :to="'/email/:folder/' +email.id"><button>Details</button></router-link>
+                <router-link :to="'/email/:folder/' +email.id"><button>Open</button></router-link>
             </div>
         </li>
      </ul>
