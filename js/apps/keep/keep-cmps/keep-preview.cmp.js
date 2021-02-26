@@ -28,8 +28,9 @@ export default {
             <section class="edit-section">
             <input class="edit-color-input" v-if="editColor" type="color" v-model="rgb">
             <input class="edit-title-input" v-if="editMode" type="text" @keydown.enter="editNote" placeholder="Keep Title" v-model="keepTitle">
-            
-            <input class="edit-txt-input" v-if="editMode" type="text" @keydown.enter="editNote" placeholder="Edit Text" v-model="msgBody">
+
+            <input class="edit-txt-input" v-if="editMode && note.info.txt" type="text" @keydown.enter="editNote" placeholder="Keep Text" v-model="msgBody">
+            <input class="edit-url-input" v-if="editMode && note.info.url" type="text" @keydown.enter="editNote" placeholder="Keep URL" v-model="keepURL">
             </section>
 
         </section>
@@ -43,15 +44,16 @@ export default {
             rgb: this.note.style.backgroundColor,
             editMode: false,
             msgBody: this.note.info.txt,
-            keepTitle: this.note.info.title
+            keepTitle: this.note.info.title,
+            keepURL: this.note.info.url
         }
     },
     methods: {
-        removeNote(note) {
+        removeNote() {
             eventBus.$emit('remove', this.note);
             console.log('delete me');
         },
-        selectNote(note) {
+        selectNote() {
             eventBus.$emit('selected', this.note);
             console.log('edit me');
         },
@@ -61,7 +63,27 @@ export default {
             eventBus.$emit('update', this.note);
         },
         editNote() {
+            console.log('keep title: ', this.note.info.title, 'input:', this.keepTitle)
+            console.log('keep url: ', this.note.info.url, 'input:', this.keepURL)
+            console.log('keep txt: ', this.note.info.txt, 'input:', this.keepTxt)
+            if (this.keepType === 'keepTxt' || this.keepType === 'keepTodos') {
+                this.note.info.txt = this.msgBody;
 
+            } else if (this.keepType === 'keepImg' || this.keepType === 'keepVideo') {
+                if (!this.note.info.url) {
+                    this.note.info.url = this.keepURL
+                } else {
+                    this.note.info.url = this.keepURL;
+                }
+                console.log('edited note', this.note);
+            };
+
+            if (!this.note.info.title) {
+                this.note.info.title = this.keepTitle;
+            } else {
+                this.note.info.title = this.keepTitle;
+            }
+            eventBus.$emit('update', this.note);
         }
     },
     computed: {
