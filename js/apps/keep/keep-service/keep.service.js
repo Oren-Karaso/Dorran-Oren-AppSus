@@ -10,7 +10,8 @@ export const keepService = {
     // addKeep,
     // saveKeep,
     removeKeep,
-    updateKeep
+    updateKeep,
+    searchKeep
 
 
 }
@@ -105,6 +106,11 @@ function removeKeep(note) {
 // function addKeep(note) {
 //     storageService.post(KEEP_KEY, note);
 // }
+
+function searchKeep(searchTerm) {
+
+
+}
 
 
 function createKeep(keepType, content) {
