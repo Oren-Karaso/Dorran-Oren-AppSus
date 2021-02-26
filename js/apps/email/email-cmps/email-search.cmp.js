@@ -2,9 +2,9 @@ import { eventBus } from '../../../services/event-bus.service.js'
 
 export default {
     template: `
-    <section class="email-filter">
+    <section class="email-search">
         <label class="search-by"> Search in Emails: </label>    
-        <input type="text" @input="setFilter" placeholder="Search...." v-model="searchBy">
+        <input type="text" @input="setSearch" placeholder="Search...." v-model="searchBy">
     </section>
     `,
     data() {
@@ -13,7 +13,7 @@ export default {
         }
     },
     methods:{
-        setFilter(){
+        setSearch(){
             eventBus.$emit('searchKeyPassed',this.searchBy);
         }
     }

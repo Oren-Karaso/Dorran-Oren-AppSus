@@ -1,0 +1,11 @@
+@import "/css/fonts.css";
+@import "/css/helpers.css";
+
+* {
+    box-sizing: border-box;
+}
+
+.email-sidebar-list li {
+    cursor: pointer;
+    width: fit-content;
+}
