@@ -82,7 +82,7 @@ export const emailService = {
     removeEmail,
     getEmailsByFolder,
     searchByContent,
-    filterByReadUnRead,
+    filterBykey,
     updateStatus
 }
 
@@ -101,7 +101,7 @@ function sendEmail(email) {
 }
 
 function updateStatus(email) {
-   return storageService.put(EMAIL_KEY, email);
+    return storageService.put(EMAIL_KEY, email);
 }
 
 function getById(id) {
@@ -144,14 +144,32 @@ function searchByContent(emails, searchStr) {
             email.content.from.toLowerCase().includes(searchStr) ||
             email.content.subject.toLowerCase().includes(searchStr) ||
             email.content.to.toLowerCase().includes(searchStr));
-        
+
     })
 }
-function filterByReadUnRead(emails, boolean) {
 
-    return emails.filter(email => {
-        return (email.status.isRead === boolean);
-    })
+function filterBykey(emails, key) {
+    if (typeof key === 'boolean') {
+        return emails.filter(email => {
+            return (email.status.isRead === key);
+        });
+    }
+
+    switch (key) {
+
+        case 'inbox': return emails.filter(email => {
+            return (email.folder === 'inbox');
+        });
+        case 'sent': return emails.filter(email => {
+            return (email.folder === 'sent');
+        });
+        case 'drafts': return emails.filter(email => {
+            return (email.folder === 'drafts');
+        });
+        case 'trash': return emails.filter(email => {
+            return (email.folder === 'trash');
+        });
+    }
 }
 
 

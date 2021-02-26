@@ -14,7 +14,7 @@ export default {
             <email-preview :email="email" />
             <div class="btns-container">
                 <button @click="removeEmail(email.id)">🗑</button>
-                <router-link :to="'/email/:'+email.folder+'/' +email.id"><button>Open</button></router-link>
+                <router-link :to="'/email/'+email.folder+'/' +email.id"><button>Open</button></router-link>
             </div>
         </li>
      </ul>
@@ -55,7 +55,7 @@ export default {
             emailService.query()       // didn't work with refreshDisplay
                 .then(emails => {
                     this.emails = emails;
-                    const filteredEmails = emailService.filterByReadUnRead(emails, filterByRead);
+                    const filteredEmails = emailService.filterBykey(emails, filterByRead);
                     this.filterByRead = !this.filterByRead;
                     this.emails = filteredEmails;
                 })

@@ -9,7 +9,7 @@ export default {
         <p>Created \\ Recieved at: {{email.status.timestamp}}</p> 
         <p>Content: {{email.content.msgBody}}</p> 
         <button @click="markReadUnRead">{{(!email.status.isRead) ? "Mark As Read" : "Mark As Unread"}}</button>
-        <router-link to="/email/:folder"><button>X</button></router-link>
+        <router-link to="/email/inbox"><button>X</button></router-link>
     </section>
     `,
     data() {
@@ -18,7 +18,7 @@ export default {
         }
     },
     methods: {
-
+        // this.$router.push(`/email/${this.$route.params.folder}`);
         sendEmail(email) {
             console.log('in function');
             emailService.sendEmail(email)
