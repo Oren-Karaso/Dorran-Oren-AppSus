@@ -2,7 +2,7 @@
 @import "/css/helpers.css";
 @import "/css/email/cmps/email-compose.css";
 @import "/css/email/cmps/email-sidebar.css";
-@import "/css/email/cmps/email-filter.css";
+@import "/css/email/cmps/email-search.css";
 @import "/css/email/cmps/email-preview.css";
 @import "/css/email/pages/email-list.css";
 @import "/css/email/pages/email-app.css";
