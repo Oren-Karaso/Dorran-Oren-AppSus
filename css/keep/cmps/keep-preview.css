@@ -56,3 +56,11 @@
 .edit-section input {
     width: 100%;
 }
+
+.done {
+    text-decoration: line-through;
+}
+
+.undone {
+    text-decoration: none;
+}
