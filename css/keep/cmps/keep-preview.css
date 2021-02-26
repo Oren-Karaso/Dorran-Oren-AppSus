@@ -2,6 +2,10 @@
     flex-direction: column;
 } */
 
+.note-btns {
+    margin-top: 15px;
+}
+
 .note-btns i {
     margin-inline-end: 10px;
     z-index: 1;
@@ -16,10 +20,22 @@
 .note-preview {
     width: 100%;
     height: fit-content;
+    border-radius: 7px;
+    box-shadow: 0 0 7px rgba(15, 15, 15, 0.322);
 }
+
+.note-preview li {
+    list-style-position: inside;
+}
+
+
+/* .note-preview ul {
+    margin: 0 0 15px;
+} */
 
 .note-preview p {
     word-wrap: break-word;
+    margin: 0;
 }
 
 .note {
@@ -34,7 +50,8 @@
 
 .note-img {
     width: 100%;
-    margin: 5px auto;
+    /* margin: 0 0 15px; */
+    margin-top: 10px;
 }
 
 .edit-color-input {
@@ -47,11 +64,12 @@
     margin-top: 10px;
 }
 
-.edit-color {
+
+/* .edit-color {
     display: flex;
     flex-direction: column;
     padding: 4px;
-}
+} */
 
 .edit-section input {
     width: 100%;
