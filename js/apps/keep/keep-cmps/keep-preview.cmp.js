@@ -22,7 +22,7 @@ export default {
             <section class="note-btns flex">
                 <div @click="removeNote" class="delete-note"><i class="fas fa-trash-alt"></i></div>
                 <div @click="selectNote" class="edit-note"><i class="fas fa-edit"></i></div>
-                <div @click="selectNote" class="edit-color"><i class="fas fa-palette"></i></div>
+                <div @click="changeColor" class="edit-color"><i class="fas fa-palette"></i><input class="edit-color-input" v-if="editColor" type="color" v-model="rgb"></div>
                 <div @click="selectNote" class="pin"><i class="fas fa-thumbtack"></i></div>
             </section>
         </section>
@@ -32,6 +32,8 @@ export default {
     data() {
         return {
             keepType: this.note.type,
+            editColor: false,
+            rgb: null
         }
     },
     methods: {
@@ -44,6 +46,10 @@ export default {
             console.log('edit me');
         },
         changeColor() {
+            this.editColor = !this.editColor;
+            this.note.style.backgroundColor = this.rgb;
+            eventBus.$emit('update', this.note);
+
 
         }
     },
