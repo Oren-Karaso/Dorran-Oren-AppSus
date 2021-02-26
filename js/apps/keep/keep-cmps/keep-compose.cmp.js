@@ -39,7 +39,7 @@ export default {
             } else if (this.keepType === 'keepVideo') {
                 this.msg = 'Enter Video URL...';
             } else if (this.keepType === 'keepTodos') {
-                this.msg = 'Enter comma separated list...';
+                this.msg = 'Enter Comma Separated List...';
             }
 
         },
@@ -55,12 +55,8 @@ export default {
         makeTodo() {
             const todos = this.content.split(',');
             var updatedTodos = todos.map(todo => {
-                todo = { txt: todo, doneAt: null };
-                console.log('todo', todo);
+                return todo = { txt: todo, doneAt: null };
             });
-
-            console.log('todos:', updatedTodos);
-
             this.$emit('todos', updatedTodos);
         }
 

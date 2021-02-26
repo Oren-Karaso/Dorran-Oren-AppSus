@@ -11,7 +11,7 @@ import { eventBus } from '../../../services/event-bus.service.js';
 export default {
     template: `
         <section class="keep-app flex">
-        <keep-filter/>
+        <keep-filter @search="searchNote"/>
         <keep-compose @todos="createTodos"/>
         <keep-list v-if="notes" :notes="notes" />
 
@@ -61,6 +61,14 @@ export default {
             console.log(updatedTodos);
             keepService.createKeep(this.newNoteType, updatedTodos);
             // .then((keep) => { console.log(keep) })
+        },
+
+
+        searchNote(searchTerm) {
+            console.log('searchTerm', searchTerm);
+            keepService.searchKeep(searchTerm);
+
+
         }
 
     },
@@ -77,6 +85,7 @@ export default {
         eventBus.$on('content', this.addNote);
         eventBus.$on('update', this.updateNote);
         // eventBus.$on('todos', this.createTodos);
+        // eventBus.$on('search', this.searchNote);
 
 
 
