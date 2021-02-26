@@ -9,7 +9,9 @@ export const keepService = {
     createKeep,
     // addKeep,
     // saveKeep,
-    removeKeep
+    removeKeep,
+    updateKeep
+
 
 }
 
@@ -139,6 +141,10 @@ function createKeep(keepType, content) {
     }
     storageService.post(KEEP_KEY, note);
     return note;
+}
+
+function updateKeep(note) {
+    return storageService.put(KEEP_KEY, note);
 }
 
 // if note.type TODOS: note.info.todo ==>

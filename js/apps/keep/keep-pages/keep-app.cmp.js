@@ -42,9 +42,7 @@ export default {
             setTimeout(() => {
                 keepService.query()
                     .then(notes => this.notes = notes);
-            }, 0)
-
-
+            }, 0);
         },
         noteType(keepType) {
             this.newNoteType = keepType;
@@ -52,7 +50,12 @@ export default {
         updateNote(note) {
             // make a function that uses storage-service - put
             // to update note
-
+            const updatedNote = this.notes.find(item => item.id === note.id);
+            keepService.updateKeep(updatedNote);
+            setTimeout(() => {
+                keepService.query()
+                    .then(notes => this.notes = notes);
+            }, 0);
         }
 
     },
