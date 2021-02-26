@@ -3,7 +3,7 @@ import emailSidebar from '../email-cmps/email-sidebar.cmp.js'
 
 export default {
     template: `
-        <section class="email-app">
+        <section class="email-app cln-grid">
           <email-sidebar class="side-bar" />
           <email-search /> 
           <router-view />

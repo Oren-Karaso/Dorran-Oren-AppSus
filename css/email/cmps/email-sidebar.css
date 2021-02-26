@@ -7,5 +7,10 @@
 
 .email-sidebar-list li {
     cursor: pointer;
-    width: fit-content;
+    width:150px;
+    padding: 5px;
+}
+
+.email-sidebar-list li:hover {
+  background-color: rgb(110, 110, 110);
 }
