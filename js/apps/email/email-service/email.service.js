@@ -142,6 +142,7 @@ function searchByContent(emails, searchStr) {
         return (
             email.content.msgBody.toLowerCase().includes(searchStr) ||
             email.content.from.toLowerCase().includes(searchStr) ||
+            email.content.subject.toLowerCase().includes(searchStr) ||
             email.content.to.toLowerCase().includes(searchStr));
         
     })
