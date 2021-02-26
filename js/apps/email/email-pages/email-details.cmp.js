@@ -15,26 +15,10 @@ export default {
     data() {
         return {
             email: null,
-            // msgBodyToShow: null
         }
     },
     methods: {
 
-        // more() {
-        //     this.newDescrip = this.book.description;
-        // },
-        // showDetails() {
-        //     if (this.email.content.msgBody.length > 80) {
-        //         this.newDescrip = this.newDescrip.substring(96, 0);
-        //         this.newDescrip += '...';
-        //     }
-        // },
-        selecEmail(email) {
-            this.selectedEmail = email;
-        },
-        // addReview() {
-        //     this.isAddingRev = true;
-        // },
         sendEmail(email) {
             console.log('in function');
             emailService.sendEmail(email)
@@ -46,23 +30,22 @@ export default {
                 });
         },
         markReadUnRead() {
-            this.email.status.isRead = true;
+            this.email.status.isRead = !this.email.status.isRead;
             emailService.updateStatus(this.email)
-            .then(email => {
-                console.log('email has been mark as read:', email)
-            })
-            .catch(err => {
-                console.log('Error in updating a mail');
-            });
+                .then(email => {
+                    console.log('email has been marked from:', !this.email.status.isRead + ' to:', this.email.status.isRead);
+                })
+                .catch(err => {
+                    console.log('Error in updating a mail');
+                });
         }
     },
     computed: {
-        
+
     },
 
     created() {
         const id = this.$route.params.emailId;
-        console.log('id:', id);
 
         emailService.getById(id)
             .then(email => {

@@ -3,7 +3,7 @@ import homePage from './pages/appsus.cmp.js';
 import keepApp from './apps/keep/keep-pages/keep-app.cmp.js';
 import emailApp from './apps/email/email-pages/email-app.cmp.js';
 import emailDetails from './apps/email/email-pages/email-details.cmp.js';
-import emailList from './apps/email/email-cmps/email-list.cmp.js';
+import emailList from './apps/email/email-pages/email-list.cmp.js';
 
 const routes = [{
         path: '/',
