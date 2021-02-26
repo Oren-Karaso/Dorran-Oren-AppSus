@@ -6,7 +6,7 @@ export default {
         <li class="starred">⭐ Starred</li>
         <li class="sent-mail">📤 Sent Mail</li>
         <li class="drafts">📝 Drafts</li>
-        <li class="drafts">🗑 Trash</li>
+        <li class="trsh">🗑 Trash</li>
     </ul>
     </section>
 `,

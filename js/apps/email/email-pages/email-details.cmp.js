@@ -15,7 +15,6 @@ export default {
     data() {
         return {
             email: null,
-            // msgBodyToShow: null
         }
     },
     methods: {
@@ -47,7 +46,6 @@ export default {
 
     created() {
         const id = this.$route.params.emailId;
-        console.log('id:', id);
 
         emailService.getById(id)
             .then(email => {
