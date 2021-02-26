@@ -139,7 +139,11 @@ function getEmailsByFolder(folder) {
 
 function searchByContent(emails, searchStr) {
     return emails.filter(email => {
-        return email.content.msgBody.toLowerCase().includes(searchStr);
+        return (
+            email.content.msgBody.toLowerCase().includes(searchStr) ||
+            email.content.from.toLowerCase().includes(searchStr) ||
+            email.content.to.toLowerCase().includes(searchStr));
+        
     })
 }
 function filterByReadUnRead(emails, boolean) {
