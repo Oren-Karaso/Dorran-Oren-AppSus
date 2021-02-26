@@ -21,10 +21,16 @@ export default {
             <p class="note-title">{{note}}</p> -->
             <section class="note-btns flex">
                 <div @click="removeNote" class="delete-note"><i class="fas fa-trash-alt"></i></div>
-                <div @click="selectNote" class="edit-note"><i class="fas fa-edit"></i></div>
-                <div @click="changeColor" class="edit-color"><i class="fas fa-palette"></i><input class="edit-color-input" v-if="editColor" type="color" v-model="rgb"></div>
-                <div @click="selectNote" class="pin"><i class="fas fa-thumbtack"></i></div>
+                <div @click="editMode = !editMode" class="edit-note"><i class="fas fa-edit"></i></div>
+                <div @click="changeColor" class="edit-color"><i class="fas fa-palette"></i></div>
+                <div @click="selectNote" class="pin-btn"><i class="fas fa-thumbtack"></i></div>
             </section>
+            <section class="edit-section">
+            <input class="edit-color-input" v-if="editColor" type="color" v-model="rgb">
+            <input class="edit-title-input" v-if="editMode" type="text" @keydown.enter="editNote" placeholder="Keep Title" v-model="keepTitle">
+            <input class="edit-txt-input" v-if="editMode" type="text" @keydown.enter="editNote" placeholder="Edit Text" v-model="msgBody">
+            </section>
+
         </section>
         
     </section>
@@ -33,7 +39,10 @@ export default {
         return {
             keepType: this.note.type,
             editColor: false,
-            rgb: null
+            rgb: this.note.style.backgroundColor,
+            editMode: false,
+            msgBody: this.note.info.txt,
+            keepTitle: this.note.info.title
         }
     },
     methods: {
@@ -49,7 +58,8 @@ export default {
             this.editColor = !this.editColor;
             this.note.style.backgroundColor = this.rgb;
             eventBus.$emit('update', this.note);
-
+        },
+        editNote() {
 
         }
     },
