@@ -50,7 +50,7 @@ export default {
             this.newNoteType = keepType;
         },
         updateNote(note) {
-            // make a function that uses storage service - put
+            // make a function that uses storage-service - put
             // to update note
 
         }
