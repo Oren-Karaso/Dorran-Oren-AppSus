@@ -7,7 +7,7 @@ export default {
     template: `
     <section class="main-list-container">
      <button @click="newEmail" >+ Compose</button>
-     <button @click="filter(emails, filterByRead)">{{(filterByRead) ? "By read" : "By unread"}}</button>
+     <button @click="filter(filterByRead)">{{(filterByRead) ? "By read" : "By unread"}}</button>
      <button @click="refreshDisplay">View All Emails</button>
      <ul class="email-list">
         <li v-if="emails" v-for="email in emails" :key="email.id" class="email-preview-container" >
@@ -38,9 +38,9 @@ export default {
                 })
                 .catch(err => console.log('Error in removing email'));
         },
-        emailsToShow(filterBy) {
-            if (!filterBy || filterBy === '') this.refreshDisplay();
-            const searchStr = filterBy.toLowerCase();
+        emailsToShow(searchBy) {
+            if (!searchBy || searchBy === '') this.refreshDisplay();
+            const searchStr = searchBy.toLowerCase();
             const emailsToShow = emailService.searchByContent(this.emails, searchStr);
             this.emails = emailsToShow;
         },
@@ -51,7 +51,7 @@ export default {
                 });
         },
 
-        filter(emails, filterByRead) {
+        filter(filterByRead) {
             emailService.query()       // didn't work with refreshDisplay
                 .then(emails => {
                     this.emails = emails;
@@ -59,7 +59,7 @@ export default {
                     this.filterByRead = !this.filterByRead;
                     this.emails = filteredEmails;
                 })
-                .catch(err => console.log('Error in filtering emails'));
+                .catch(err => console.log('Error in filtering emails', err));
         },
         newEmail() {
             this.emptyEmail = emailService.getEmptyEmail()
@@ -67,7 +67,7 @@ export default {
         sendAnEmail(email) {
             emailService.sendEmail(email)
                 .then(email => console.log('email sent:', email))
-                .catch(err => console.log('Error in sending email'));
+                .catch(err => console.log('Error in sending email', err));
         }
     },
     components: {
@@ -76,10 +76,10 @@ export default {
     },
     created() {
         this.refreshDisplay();
-        eventBus.$on('filtered', this.emailsToShow);
+        eventBus.$on('searchKeyPassed', this.emailsToShow);
     },
     destroyed() {
-        eventBus.$off('filtered', this.emailsToShow);
+        eventBus.$off('searchKeyPassed', this.emailsToShow);
     }
 }
 
