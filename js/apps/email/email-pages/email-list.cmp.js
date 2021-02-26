@@ -36,7 +36,7 @@ export default {
                         .then(emails => this.emails = emails);
                     console.log('email has been removed');
                 })
-                .catch(err => console.log('Error in removing email'));
+                .catch(err => console.log('Error in removing email', err));
         },
         emailsToShow(searchBy) {
             if (!searchBy || searchBy === '') this.refreshDisplay();
@@ -47,7 +47,8 @@ export default {
         refreshDisplay() {
             emailService.query()
                 .then(emails => {
-                    this.emails = emails
+                    this.emails = emails;
+                //    if (this.folder !== 'inbox') this.$router.replace('/email/inbox');
                 });
         },
 
@@ -68,18 +69,34 @@ export default {
             emailService.sendEmail(email)
                 .then(email => console.log('email sent:', email))
                 .catch(err => console.log('Error in sending email', err));
+        },
+        showByFolder(folder) {
+            console.log('folder:', folder);
+            emailService.query()      
+            .then(emails => {
+                this.emails = emails;
+                const filteredEmails = emailService.filterBykey(emails, folder);
+                this.emails = filteredEmails;
+            })
+            .catch(err => console.log('Error in filtering emails', err));
         }
+
     },
     components: {
         emailPreview,
         emailCompose
     },
     created() {
+        const folder = this.$route.params.folder;               
+
         this.refreshDisplay();
         eventBus.$on('searchKeyPassed', this.emailsToShow);
+        eventBus.$on('changeFolder', this.showByFolder);
     },
     destroyed() {
         eventBus.$off('searchKeyPassed', this.emailsToShow);
-    }
+        eventBus.$off('changeFolder', this.showByFolder);
+    },
+   
 }
 

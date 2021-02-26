@@ -6,7 +6,7 @@ const gEmails = [
     {
         id: utilService.makeId(),
         status: {
-            starred: false,
+            isStarred: false,
             isRead: false,
             timestamp: new Date()
         },
@@ -23,11 +23,11 @@ const gEmails = [
     {
         id: utilService.makeId(),
         status: {
-            starred: true,
+            isStarred: true,
             isRead: true,
             timestamp: new Date()
         },
-        folder: 'inbox',
+        folder: 'sent',
         content: {
             to: 'Aba',
             from: 'Ima',
@@ -40,11 +40,11 @@ const gEmails = [
     {
         id: utilService.makeId(),
         status: {
-            starred: true,
+            isStarred: true,
             isRead: false,
             timestamp: new Date()
         },
-        folder: 'inbox',
+        folder: 'trash',
         content: {
             to: 'Saba',
             from: 'Savta',
@@ -57,11 +57,11 @@ const gEmails = [
     {
         id: utilService.makeId(),
         status: {
-            starred: false,
+            isStarred: false,
             isRead: true,
             timestamp: new Date()
         },
-        folder: 'inbox',
+        folder: 'sent',
         content: {
             to: 'Savta',
             from: 'Saba',
@@ -112,7 +112,7 @@ function getEmptyEmail() {
     return {
         id: utilService.makeId(),
         status: {
-            starred: false,
+            isStarred: false,
             isRead: false,
             timestamp: new Date()
         },
@@ -158,10 +158,10 @@ function filterBykey(emails, key) {
     switch (key) {
 
         case 'inbox': return emails.filter(email => {
-            return (email.folder === 'inbox');
+            return (email.folder === 'inbox' || email.folder === 'sent');
         });
         case 'sent': return emails.filter(email => {
-            return (email.folder === 'sent');
+            return (email.folder === 'sent' || email.folder === 'inbox');
         });
         case 'drafts': return emails.filter(email => {
             return (email.folder === 'drafts');

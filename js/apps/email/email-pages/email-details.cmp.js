@@ -18,7 +18,6 @@ export default {
         }
     },
     methods: {
-        // this.$router.push(`/email/${this.$route.params.folder}`);
         sendEmail(email) {
             console.log('in function');
             emailService.sendEmail(email)
