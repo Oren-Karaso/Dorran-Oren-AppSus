@@ -46,7 +46,7 @@ function query() {
                         type: "keepTodos",
                         info: {
                             label: "How was it:",
-                            todos: [
+                            todolist: [
                                 { txt: "Do that", doneAt: null },
                                 { txt: "Do this", doneAt: 187111111 }
                             ]
@@ -109,7 +109,6 @@ function removeKeep(note) {
 
 function searchKeep(searchTerm) {
 
-
 }
 
 
@@ -131,10 +130,8 @@ function createKeep(keepType, content) {
     if (keepType === 'keepTodos') {
         note.info = {
             title: null,
-            todo: {
-                lable: null,
-                todos: content
-            },
+            todolist: content
+
         }
 
 

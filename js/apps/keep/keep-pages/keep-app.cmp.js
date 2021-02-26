@@ -30,6 +30,7 @@ export default {
         selectNote(note) {
             this.selectedNote = note;
         },
+
         removeNote(note) {
             keepService.removeKeep(note)
                 .then(() => {
@@ -37,6 +38,7 @@ export default {
                         .then(notes => this.notes = notes);
                 })
         },
+
         addNote(content) {
             keepService.createKeep(this.newNoteType, content);
             setTimeout(() => {
@@ -44,9 +46,11 @@ export default {
                     .then(notes => this.notes = notes);
             }, 0);
         },
+
         noteType(keepType) {
             this.newNoteType = keepType;
         },
+
         updateNote(note) {
             // make a function that uses storage-service - put
             // to update note
@@ -57,25 +61,16 @@ export default {
                     .then(notes => this.notes = notes);
             }, 0);
         },
+
         createTodos(updatedTodos) {
             console.log(updatedTodos);
             keepService.createKeep(this.newNoteType, updatedTodos);
-            // .then((keep) => { console.log(keep) })
         },
-
 
         searchNote(searchTerm) {
             console.log('searchTerm', searchTerm);
             keepService.searchKeep(searchTerm);
-
-
         }
-
-    },
-    computed: {
-
-    },
-    mounted() {
 
     },
     created() {

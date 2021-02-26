@@ -2,22 +2,31 @@ export default {
     props: ['note'],
     template: `
     <section>
-        <li v-if="note.info.todos" @click="todoDone" v-for="todo in note.info.todos" :todo="todo" class="note-title">{{todo.txt}}</li> 
-    
+        <ul>
+        <li @click="todoDone(todo)" v-for="todo in note.info.todolist" :class="{'done': todo.doneAt, 'undone': !todo.doneAt}" class="note-todo" > {{todo.txt}} </li> 
+        </ul>
     
     </section>
 `,
     data() {
         return {
-            selectedNote: this.note
+            selectedNote: this.note,
+            // noteDone: null
 
         }
     },
     methods: {
-        todoDone() {
+        todoDone(todo) {
             console.log('new conlog = selected note is:', this.selectedNote);
-            console.log(this.selectedNote.info.todos[this.todo]);
-            this.selectedNote.info.todos[this.todo].doneAt = Date.now();
+            console.log('this todo', todo);
+            let currTodo = this.selectedNote.info.todolist.find(item => item === todo);
+            currTodo.doneAt = Date.now();
+            console.log('currTodo', currTodo);
+            // if (!this.noteDone) {
+            //     this.noteDone = 'done';
+            // } else {
+            //     this.noteDone = null;
+            // }
         }
 
     }
