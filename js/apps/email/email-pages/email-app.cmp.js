@@ -1,3 +1,4 @@
+import { eventBus } from '../../../services/event-bus.service.js';
 import emailSearch from '../email-cmps/email-search.cmp.js'
 import emailSidebar from '../email-cmps/email-sidebar.cmp.js'
 
@@ -11,6 +12,7 @@ export default {
 
         </section>
     `,
+   
     components: {
         emailSearch,
         emailSidebar

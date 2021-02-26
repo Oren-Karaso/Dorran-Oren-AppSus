@@ -11,3 +11,13 @@ button {
 .btns-container {
     margin-bottom: 10px;
 }
+
+.main-list-container {
+    grid-area: 2 / 2 / 9 / 3;
+}
+
+.email-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}

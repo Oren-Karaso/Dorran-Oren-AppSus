@@ -7,4 +7,9 @@
 
 .email-search {
     text-align: center;
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.email-search input {
+   width: 80%;
 }

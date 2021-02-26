@@ -6,7 +6,6 @@ import { eventBus } from '../../../services/event-bus.service.js'
 export default {
     template: `
     <section class="main-list-container">
-     <button @click="newEmail" >+ Compose</button>
      <button @click="filter(filterByRead)">{{(filterByRead) ? "By read" : "By unread"}}</button>
      <button @click="refreshDisplay">View All Emails</button>
      <ul class="email-list">
@@ -92,10 +91,12 @@ export default {
         this.refreshDisplay();
         eventBus.$on('searchKeyPassed', this.emailsToShow);
         eventBus.$on('changeFolder', this.showByFolder);
+        eventBus.$on('sending', this.newEmail);
     },
     destroyed() {
         eventBus.$off('searchKeyPassed', this.emailsToShow);
         eventBus.$off('changeFolder', this.showByFolder);
+        eventBus.$off('sending', this.newEmail);
     },
    
 }

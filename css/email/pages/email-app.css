@@ -9,7 +9,4 @@
     /* grid-auto-rows: 50px; */
     grid-template-rows: repeat(8, 1fr);
     grid-template-columns: 1fr 4fr;
-    grid-template-areas: "email-sidebar email-search" 
-                        "canvas btns" 
-                        ".dwnld-share";
 }
