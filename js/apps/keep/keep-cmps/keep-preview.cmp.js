@@ -28,6 +28,7 @@ export default {
             <section class="edit-section">
             <input class="edit-color-input" v-if="editColor" type="color" v-model="rgb">
             <input class="edit-title-input" v-if="editMode" type="text" @keydown.enter="editNote" placeholder="Keep Title" v-model="keepTitle">
+            
             <input class="edit-txt-input" v-if="editMode" type="text" @keydown.enter="editNote" placeholder="Edit Text" v-model="msgBody">
             </section>
 
