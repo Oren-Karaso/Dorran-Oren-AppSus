@@ -8,6 +8,7 @@ export default {
     <section class="main-list-container">
      <button @click="newEmail" >+ Compose</button>
      <button @click="filter(emails, filterByRead)">{{(filterByRead) ? "By read" : "By unread"}}</button>
+     <button @click="refreshDisplay">View All Emails</button>
      <ul class="email-list">
         <li v-if="emails" v-for="email in emails" :key="email.id" class="email-preview-container" >
             <email-preview :email="email" />
