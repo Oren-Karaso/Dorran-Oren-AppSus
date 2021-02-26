@@ -122,12 +122,12 @@ function createKeep(keepType, content) {
         }
 
     }
-    if (keepType === 'keepTodo') {
+    if (keepType === 'keepTodos') {
         note.info = {
             title: null,
             todo: {
                 lable: null,
-                todos: []
+                todos: content
             },
         }
 

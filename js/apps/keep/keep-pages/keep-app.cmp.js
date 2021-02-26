@@ -12,7 +12,7 @@ export default {
     template: `
         <section class="keep-app flex">
         <keep-filter/>
-        <keep-compose/>
+        <keep-compose @todos="createTodos"/>
         <keep-list v-if="notes" :notes="notes" />
 
         </section>
@@ -56,6 +56,11 @@ export default {
                 keepService.query()
                     .then(notes => this.notes = notes);
             }, 0);
+        },
+        createTodos(updatedTodos) {
+            console.log(updatedTodos);
+            keepService.createKeep(this.newNoteType, updatedTodos);
+            // .then((keep) => { console.log(keep) })
         }
 
     },
@@ -71,6 +76,8 @@ export default {
         eventBus.$on('keepType', this.noteType);
         eventBus.$on('content', this.addNote);
         eventBus.$on('update', this.updateNote);
+        // eventBus.$on('todos', this.createTodos);
+
 
 
     },
@@ -79,6 +86,8 @@ export default {
         eventBus.$off('keepType', this.addNote);
         eventBus.$off('content', this.content);
         eventBus.$off('update', this.updateNote);
+        eventBus.$off('todos', this.createTodos);
+
 
 
 

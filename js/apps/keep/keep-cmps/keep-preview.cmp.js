@@ -66,12 +66,11 @@ export default {
             console.log('keep title: ', this.note.info.title, 'input:', this.keepTitle)
             console.log('keep url: ', this.note.info.url, 'input:', this.keepURL)
             console.log('keep txt: ', this.note.info.txt, 'input:', this.keepTxt)
-            if (this.keepType === 'keepTxt' || this.keepType === 'keepTodos') {
+            if (this.keepType === 'keepTxt') {
                 this.note.info.txt = this.msgBody;
-
             } else if (this.keepType === 'keepImg' || this.keepType === 'keepVideo') {
                 if (!this.note.info.url) {
-                    this.note.info.url = this.keepURL
+                    this.note.info.url = this.keepURL;
                 } else {
                     this.note.info.url = this.keepURL;
                 }

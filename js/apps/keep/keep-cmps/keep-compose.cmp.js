@@ -44,8 +44,24 @@ export default {
 
         },
         defineContent() {
-            eventBus.$emit('content', this.content);
+            if (this.keepType === 'keepTodos') {
+                this.makeTodo();
+
+            } else {
+                eventBus.$emit('content', this.content);
+            }
             this.content = '';
+        },
+        makeTodo() {
+            const todos = this.content.split(',');
+            var updatedTodos = todos.map(todo => {
+                todo = { txt: todo, doneAt: null };
+                console.log('todo', todo);
+            });
+
+            console.log('todos:', updatedTodos);
+
+            this.$emit('todos', updatedTodos);
         }
 
     },
