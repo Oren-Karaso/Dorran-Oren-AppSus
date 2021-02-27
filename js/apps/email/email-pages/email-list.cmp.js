@@ -13,7 +13,7 @@ export default {
              <router-link :to="'/email/'+email.folder+'/' +email.id"><email-preview :email="email" /></router-link>
           </li>
         </ul>
-        <email-compose v-if="emptyEmail" @saved="sendAnEmail" :emptyEmail="emptyEmail" />
+        <email-compose @closeCompose="emptyEmail = null" v-if="emptyEmail" @saved="sendAnEmail" :emptyEmail="emptyEmail" />
     </section>
     `,
     data() {

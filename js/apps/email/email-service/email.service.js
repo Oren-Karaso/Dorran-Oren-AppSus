@@ -14,6 +14,7 @@ const gEmails = [
         content: {
             to: 'Ima',
             from: 'Aba',
+            address: 'mose_h@gmail.com',
             cc: null,
             bss: null,
             subject: 'I love you',
@@ -31,6 +32,7 @@ const gEmails = [
         content: {
             to: 'Aba',
             from: 'Ima',
+            address: 'lea_h@gmail.com',
             cc: null,
             bss: null,
             subject: 'The dog',
@@ -48,6 +50,7 @@ const gEmails = [
         content: {
             to: 'Saba',
             from: 'Savta',
+            address: 'devora_h@gmail.com',
             cc: null,
             bss: null,
             subject: 'I am no technophob',
@@ -65,6 +68,7 @@ const gEmails = [
         content: {
             to: 'Savta',
             from: 'Saba',
+            address: 'haim_h@gmail.com',
             cc: null,
             bss: null,
             subject: 'I am impressed indeed',
@@ -82,6 +86,7 @@ const gEmails = [
         content: {
             to: 'Me',
             from: 'U.S. Bank',
+            address: '1800USBanks@email.usbank.com',
             cc: null,
             bss: null,
             subject: 'Tips on tackling debt and boosting your credit score',
@@ -99,6 +104,7 @@ const gEmails = [
         content: {
             to: 'Me',
             from: 'Booking.com',
+            address: 'booking.com',
             cc: null,
             bss: null,
             subject: 'From glaciers to gelato',
@@ -116,6 +122,7 @@ const gEmails = [
         content: {
             to: 'Me',
             from: 'Roots',
+            address: 'shaul@friendsofroots.net',
             cc: null,
             bss: null,
             subject: 'Roots Run for Reconciliation, Crowd-funding Campaign and Online Presentations',
@@ -171,6 +178,7 @@ function getEmptyEmail() {
         content: {
             to: '',
             from: '',
+            address: '',
             cc: null,
             bss: null,
             subject: '',
