@@ -1,16 +1,22 @@
 import keepPreview from './keep-preview.cmp.js';
 
 export default {
-    props: ['notes'],
+    props: ['notes', 'searchFor'],
     template: `
-    <!-- <section class="list-container flex"> -->
-        <section class="keep-list grid-container">
+    <section class="list-container">
+        <section v-if="(searchFor && searchFor !== '')" class="search-list">
+        <div v-for="note in searchFor" :key="note.id" class="grid-item" >
+                <keep-preview :note="note" @click.native="logId(note.id)" />
+        </div>
+        </section>
+
+        <section v-if="(!searchFor || searchFor === '')" class="keep-list grid-container">
             <div v-for="note in notes" :key="note.id" class="grid-item" >
                 <keep-preview :note="note" @click.native="logId(note.id)" />
                
 </div>
 </section>
-    <!-- </section> -->
+    </section>
         
     `,
     methods: {

@@ -13,7 +13,7 @@ export default {
         <section class="keep-app flex">
         <keep-filter @search="searchNote"/>
         <keep-compose @todos="createTodos"/>
-        <keep-list v-if="notes" :notes="notes" />
+        <keep-list v-if="notes" :notes="notes" :searchFor="searchRes" />
 
         </section>
         `,
@@ -70,7 +70,7 @@ export default {
 
         searchNote(searchTerm) {
             // keepService.query().then(notes => this.notes = notes);
-            if (!searchTerm || searchTerm === '') return;
+            // if (!searchTerm || searchTerm === '') return;
             console.log('searchTerm', searchTerm);
             console.log('notes', this.notes);
             const searchKeeps = keepService.searchKeep(searchTerm, this.notes);
