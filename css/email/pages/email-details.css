@@ -29,36 +29,11 @@
     margin-inline-end: 10px;
 }
 
-<<<<<<< HEAD
-.email-details p {
-    color: ivory;
-}
-
-.email-details span {
-    color: rgb(189 179 179);
-}
-
-
-/* .dtls-to {
-    
-}
-
-.dtls-date {
-    
-}
-=======
-.dtls-subject {}
+/* .dtls-subject {}
 
 .dtls-to {}
->>>>>>> 548623e289d0880e5ec085dea401c108c91cb52b
 
-.dtls-date {}
-
-<<<<<<< HEAD
-} */
-=======
-.dtls-content {}
->>>>>>> 548623e289d0880e5ec085dea401c108c91cb52b
+.dtls-date {} */
 
 .dtls-bts {
     display: flex;
