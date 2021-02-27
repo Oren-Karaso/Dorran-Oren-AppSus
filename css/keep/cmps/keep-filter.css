@@ -1,8 +1,30 @@
 @import "/css/fonts.css";
 @import "/css/helpers.css";
-.search-bar {
+
+/* .search-bar {
     padding: 0 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+} */
+
+.search-bar {
+    /* background-color: rgb(56, 53, 63); */
+    background-color: rgb(64 61 71);
+    border-radius: 10px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    width: 485px;
+}
+
+.search-bar input {
+    width: 96%;
+    border: none;
+    font-size: 1.2rem;
+    height: 35px;
+    border: none;
+    border-radius: 7px;
 }

@@ -35,7 +35,7 @@
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 550px) {
     .grid-container {
         column-count: 1;
     }

@@ -13,6 +13,7 @@
 
 .note-btns i:hover {
     cursor: pointer;
+    color: rgba(0, 0, 0, 0.685);
     /* color: rgba(240, 240, 240, 0.767); */
     /* color: rgb(255, 94, 107); */
 }
@@ -28,11 +29,6 @@
 .note-preview li {
     list-style-position: inside;
 }
-
-
-/* .note-preview ul {
-    margin: 0 0 15px;
-} */
 
 .note-preview p {
     word-wrap: break-word;
@@ -71,10 +67,6 @@
 
 .note:hover {
     background-color: rgba(255, 255, 255, 0.116);
-}
-
-.note i:hover {
-    color: rgba(0, 0, 0, 0.685);
 }
 
 
