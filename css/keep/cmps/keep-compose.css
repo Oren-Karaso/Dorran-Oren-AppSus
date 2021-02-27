@@ -14,12 +14,17 @@
     padding: 0 10px;
     border-radius: 10px;
     align-items: center;
+    margin-top: 10px;
 }
 
 .compose-btn button {
     background-color: none;
     border: none;
     font-size: 1.2rem;
+}
+
+.compose-btn {
+    margin-inline-start: 10px;
 }
 
 .compose input {
