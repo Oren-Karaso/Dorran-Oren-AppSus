@@ -12,7 +12,7 @@
     border-radius: 10px;
     font-size: 1.2rem;
     padding: 5px 10px;
-    box-shadow: 8px 5px 21px -1px rgba(0,0,0,0.73);
+    box-shadow: 8px 5px 21px -1px rgba(0, 0, 0, 0.73);
     border: 1px solid black;
 }
 
@@ -26,11 +26,21 @@
 
 .email-sidebar-list li {
     cursor: pointer;
-    width: 150px;
+    width: 90%;
     padding: 10px;
     margin-top: 10px;
 }
 
-.email-sidebar-list li:hover {
+
+/* .email-sidebar-list :first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.email-sidebar-list li:not(:first-child):hover {
     background-color: rgba(110, 110, 110, 0.185);
+    padding-inline-start: 15px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
 }
