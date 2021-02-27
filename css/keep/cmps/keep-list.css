@@ -1,5 +1,5 @@
-@import "css/fonts.css";
-@import "css/helpers.css";
+@import "/css/fonts.css";
+@import "/css/helpers.css";
 .grid-container,
 .search-list {
     margin: 20px auto;
