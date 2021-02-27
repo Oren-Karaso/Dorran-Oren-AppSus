@@ -50,7 +50,7 @@ const gEmails = [
         content: {
             to: 'Me',
             from: ' Xiaomi ',
-            address: '<devora_h@gmail.com>',
+            address: '<noreply@global.passport.xiaomi.com>',
             cc: null,
             bss: null,
             subject: 'Xiaomi Privacy Policy Update',
