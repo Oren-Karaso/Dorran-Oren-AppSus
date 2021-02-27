@@ -8,10 +8,6 @@ button {
     margin-left: 5px;
 }
 
-.btns-container {
-    margin-bottom: 10px;
-}
-
 .main-list-container {
     grid-area: 2 / 2 / 9 / 3;
 }
@@ -25,6 +21,7 @@ button {
     display: flex;
     margin-bottom: 25px;
 }
+
 .btns-container-bottom {
     display: flex;
     /* margin-bottom: 25px; */

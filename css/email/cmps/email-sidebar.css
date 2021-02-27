@@ -10,27 +10,27 @@
 
 .compose-button {
     border-radius: 10px;
-    border: none;
     font-size: 1.2rem;
     padding: 5px 10px;
-    
-    
+    box-shadow: 8px 5px 21px -1px rgba(0,0,0,0.73);
+    border: 1px solid black;
 }
 
-body#tinymce {
-    background: #FFFFFF .email-sidebar-list {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-        list-style-type: none;
-    }
-    .email-sidebar-list li {
-        cursor: pointer;
-        width: 150px;
-        padding: 10px;
-        margin-top: 10px;
-    }
-    .email-sidebar-list li:hover {
-        background-color: rgba(110, 110, 110, 0.185);
-    }
+.email-sidebar-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style-type: none;
+}
+
+.email-sidebar-list li {
+    cursor: pointer;
+    width: 150px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.email-sidebar-list li:hover {
+    background-color: rgba(110, 110, 110, 0.185);
+}
