@@ -44,6 +44,7 @@ function query() {
                     {
                         id: utilService.makeId(),
                         type: "keepTodos",
+                        isPinned: false,
                         info: {
                             title: "How was it:",
                             todolist: [
@@ -57,6 +58,7 @@ function query() {
                     {
                         id: utilService.makeId(),
                         type: "keepImg",
+                        isPinned: false,
                         info: {
                             url: "https://img.freepik.com/free-vector/character-illustration-people-with-creative-ideas-icons_53876-59888.jpg?size=626&ext=jpg",
                             title: "REMEMBER TO VECTOR"
