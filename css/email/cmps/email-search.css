@@ -6,8 +6,10 @@
 }
 
 .email-search {
-    text-align: center;
     grid-area: 1 / 2 / 2 / 3;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .email-search input {
