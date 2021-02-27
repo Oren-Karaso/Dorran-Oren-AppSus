@@ -18,7 +18,8 @@ export default {
     computed: {
         showEmailAddress() {
             return '<' + (this.email.content.from).toLowerCase() + '@gmail.com>';
-        }
+        },
+        
     },
 }
 

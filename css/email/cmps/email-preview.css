@@ -29,17 +29,22 @@
 
 .content {
     margin-inline-start: 5px;
-    min-width: 200px;
+    max-width: 400px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
     font-weight: 100;
     color: grey;
-    text-overflow: ellipsis;
 }
 
 .subject {
     margin-inline-start: 25px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .from {
     margin-inline-start: 25px;
-    min-width: 80px;
+    width: 100px;
 }
