@@ -22,6 +22,7 @@
 
 .email-preview {
     display: flex;
+    color: none;
 }
 
 .content {
