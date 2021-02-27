@@ -8,5 +8,5 @@
     height: 100vh;
     /* grid-auto-rows: 50px; */
     grid-template-rows: repeat(8, 1fr);
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 0.8fr 4fr;
 }

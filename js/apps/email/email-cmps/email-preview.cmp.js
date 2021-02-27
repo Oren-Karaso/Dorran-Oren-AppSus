@@ -2,9 +2,9 @@ export default {
     props: ['email'],
     template: `
     <section class="email-preview">
-        <!-- <p class ="from">{{email.content.from }} <span>{{showEmailAddress}}</span></p> -->
-        <p class="subject">Subject: <span >{{email.content.subject}}</span></p>
-        <p class="content">Content: <span >{{email.content.msgBody}}</span></p>
+        <p class ="from">{{ email.content.from }}</p>
+        <p class="subject">{{ email.content.subject }}</p>
+        <p class="content">{{ email.content.msgBody }}</p>
     </section>
     `,
     data() {

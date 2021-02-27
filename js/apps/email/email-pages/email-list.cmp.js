@@ -12,10 +12,10 @@ export default {
         </div>
      <ul class="email-list">
         <li v-if="emails" v-for="email in emails" :key="email.id" class="email-preview-container" :class="{'read': email.status.isRead, 'unread': !email.status.isRead}">
-            <email-preview :email="email" />
+            <email-preview :email="email"><router-link :to="'/email/'+email.folder+'/' +email.id"></router-link></email-preview>
             <div class="btns-container-bottom">
                 <div class="remove-email" @click="removeEmail(email.id)">🗑</div>
-                <router-link :to="'/email/'+email.folder+'/' +email.id"><button>Open</button></router-link>
+                
             </div>
         </li>
      </ul>

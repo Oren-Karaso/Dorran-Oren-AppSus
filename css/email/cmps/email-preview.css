@@ -7,10 +7,13 @@
 .read {
     font-weight: lighter;
     background-color: #32353a79;
+    color: grey;
+
 }
 
 .unread {
     font-weight: bolder;
+    color: rgb(0, 0, 0);
 }
 
 .email-preview-container {
@@ -19,4 +22,14 @@
 
 .email-preview {
     display: flex;
+}
+
+.content {
+    margin-left: 20px;
+    font-weight: 100;
+    color: grey;
+}
+
+.subject {
+    margin-left: 23px;
 }
