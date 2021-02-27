@@ -102,13 +102,12 @@ function removeKeep(note) {
 
 }
 
-
-// function addKeep(note) {
-//     storageService.post(KEEP_KEY, note);
-// }
-
-function searchKeep(searchTerm) {
-
+function searchKeep(searchTerm, notes) {
+    console.log('search notes notes:', notes)
+    return notes.filter(note => {
+        return ((note.info.title && note.info.title.toLowerCase().includes(searchTerm)) ||
+            (note.info.txt && note.info.txt.toLowerCase().includes(searchTerm)))
+    })
 }
 
 

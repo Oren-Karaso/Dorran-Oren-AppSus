@@ -23,6 +23,7 @@ export default {
             selectedNote: null,
             newNoteType: null,
             newNoteContent: null,
+            searchRes: null
 
         }
     },
@@ -68,8 +69,14 @@ export default {
         },
 
         searchNote(searchTerm) {
+            // keepService.query().then(notes => this.notes = notes);
+            if (!searchTerm || searchTerm === '') return;
             console.log('searchTerm', searchTerm);
-            keepService.searchKeep(searchTerm);
+            console.log('notes', this.notes);
+            const searchKeeps = keepService.searchKeep(searchTerm, this.notes);
+            this.searchRes = searchKeeps;
+            console.log('searchKeeps', searchKeeps);
+            // keepService.query().then(notes => this.notes = notes);
         }
 
     },
