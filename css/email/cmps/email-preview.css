@@ -32,7 +32,7 @@
 
 .content {
     margin-inline-start: 5px;
-    max-width: 400px;
+    max-width: 300px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;

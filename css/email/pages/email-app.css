@@ -9,8 +9,7 @@
 
 .email-app {
     height: 100vh;
-    /* grid-auto-rows: 50px; */
-    grid-template-rows: repeat(8, 1fr);
+width: 90vw;    grid-template-rows: repeat(8, 1fr);
     grid-template-columns: 1fr 4fr;
 }
 

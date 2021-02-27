@@ -9,6 +9,7 @@
 
 .email-sidebar {
     grid-area: 1 / 1 / 4 / 2;
+    min-width: 165px;
 }
 
 .compose-button {
