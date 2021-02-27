@@ -4,12 +4,12 @@ export default {
     props: ['notes'],
     template: `
     <!-- <section class="list-container flex"> -->
-        <ul class="keep-list grid-container">
-            <li v-for="note in notes" :key="note.id" class="note-simple grid-item flex" >
+        <section class="keep-list grid-container">
+            <div v-for="note in notes" :key="note.id" class="grid-item" >
                 <keep-preview :note="note" @click.native="logId(note.id)" />
                
-            </li>
-        </ul>
+</div>
+</section>
     <!-- </section> -->
         
     `,
