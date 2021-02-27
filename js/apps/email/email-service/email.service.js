@@ -144,8 +144,7 @@ function searchByContent(emails, searchStr) {
             email.content.from.toLowerCase().includes(searchStr) ||
             email.content.subject.toLowerCase().includes(searchStr) ||
             email.content.to.toLowerCase().includes(searchStr));
-
-    })
+    });
 }
 
 function filterBykey(emails, key) {

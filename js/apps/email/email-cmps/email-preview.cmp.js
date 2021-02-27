@@ -3,7 +3,7 @@ export default {
     template: `
     <section class="email-preview">
         <p class ="from">From: {{email.content.from }} <span>{{showEmailAddress}}</span></p>
-        <p class="subject">Subject: <span :class="{'read': email.status.isRead, 'unread': !email.status.isRead}">{{email.content.subject}}</span></p>
+        <p class="subject">Subject: <span >{{email.content.subject}}</span></p>
     </section>
     `,
     data() {

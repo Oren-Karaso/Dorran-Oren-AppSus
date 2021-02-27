@@ -1,17 +1,18 @@
 @import "/css/fonts.css";
 @import "/css/helpers.css";
-
 * {
     box-sizing: border-box;
 }
 
 .read {
-    font-style: italic;
-    color: rgb(136, 136, 136);
+    font-weight: lighter;
+    background-color: #32353a79;
 }
 
 .unread {
-    font-weight:bolder;
-    color: black;
+    font-weight: bolder;
 }
 
+.email-preview-container {
+    padding: 15px;
+}
