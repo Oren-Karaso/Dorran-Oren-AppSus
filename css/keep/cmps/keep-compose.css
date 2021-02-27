@@ -1,11 +1,12 @@
 @import "/css/fonts.css";
 @import "/css/helpers.css";
 .compose {
-    padding: 0 20px;
+    /* padding: 0 20px; */
     display: flex;
     align-items: center;
     justify-content: center;
     color: rgb(255, 250, 245);
+    margin: 0 auto;
     /* text-shadow: 2px 2.5px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; */
 }
 
