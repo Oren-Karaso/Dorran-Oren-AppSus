@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
     color: rgb(255, 250, 245);
-    text-shadow: 2px 2.5px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    /* text-shadow: 2px 2.5px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; */
 }
 
 .compose-container {

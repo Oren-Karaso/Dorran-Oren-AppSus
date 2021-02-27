@@ -105,16 +105,11 @@ function removeKeep(note) {
 function searchKeep(searchTerm, notes) {
     console.log('search notes notes:', notes)
     return notes.filter(note => {
-        console.log('note', note)
-        if (note.type === 'keepTxt') {
-            return (note.info.title.toLowerCase().includes(searchTerm) ||
-                note.info.txt.toLowerCase().includes(searchTerm) + console.log(note))
-
-        } else {
-            return note.info.title.toLowerCase().includes(searchTerm)
-        }
+        return ((note.info.title && note.info.title.toLowerCase().includes(searchTerm)) ||
+            (note.info.txt && note.info.txt.toLowerCase().includes(searchTerm)))
     })
 }
+
 
 function createKeep(keepType, content) {
     var note = {

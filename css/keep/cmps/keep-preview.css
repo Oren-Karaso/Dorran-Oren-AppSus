@@ -13,7 +13,7 @@
 
 .note-btns i:hover {
     cursor: pointer;
-    color: rgba(240, 240, 240, 0.767);
+    /* color: rgba(240, 240, 240, 0.767); */
     /* color: rgb(255, 94, 107); */
 }
 
@@ -21,7 +21,8 @@
     width: 100%;
     height: fit-content;
     border-radius: 7px;
-    box-shadow: 0 0 7px rgba(15, 15, 15, 0.322);
+    /* box-shadow: 0 0 7px rgba(15, 15, 15, 0.322); */
+    box-shadow: 0 3px 7px rgb(0 0 0);
 }
 
 .note-preview li {
@@ -44,6 +45,9 @@
     padding: 15px 15px 10px 15px;
     justify-content: space-between;
     flex-direction: column;
+    text-shadow: none;
+    color: rgb(36, 36, 41);
+    font-weight: lighter;
     /* overflow-wrap: break-word; */
     /* width: 100%; */
 }
@@ -77,6 +81,7 @@
 
 .note-title {
     font-size: 1.25rem;
+    font-weight: normal;
 }
 
 .done {

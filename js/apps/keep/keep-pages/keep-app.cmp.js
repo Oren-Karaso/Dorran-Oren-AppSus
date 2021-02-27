@@ -75,7 +75,7 @@ export default {
             console.log('notes', this.notes);
             const searchKeeps = keepService.searchKeep(searchTerm, this.notes);
             this.searchRes = searchKeeps;
-            console.log('searchKeep', searchKeep);
+            console.log('searchKeeps', searchKeeps);
             // keepService.query().then(notes => this.notes = notes);
         }
 
