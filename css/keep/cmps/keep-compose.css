@@ -1,5 +1,9 @@
-@import "/css/fonts.css";
-@import "/css/helpers.css";
+@import "../../fonts.css";
+@import "../../helpers.css";
+
+/* @import "/css/fonts.css";
+@import "/css/helpers.css"; */
+
 .compose {
     /* padding: 0 20px; */
     display: flex;
