@@ -64,15 +64,15 @@ const gEmails = [
             isRead: true,
             timestamp: new Date().toLocaleString()
         },
-        folder: 'sent',
+        folder: 'inbox',
         content: {
-            to: 'Savta',
-            from: ' Saba ',
-            address: '<haim_h@gmail.com>',
+            to: 'Me',
+            from: ' Udemy  ',
+            address: '<udemy@email.udemy.com>',
             cc: null,
             bss: null,
-            subject: 'I am impressed indeed',
-            msgBody: 'Now the only thing left for you is to learn using ZOOM!'
+            subject: 'Orenk, welcome to CSS: Zero to Hero in CSS by Styling a Website from Scratch',
+            msgBody: 'Thanks for enrolling in the course, "CSS: Zero to Hero in CSS by Styling a Website from Scratch"!'
         }
     },
     {
