@@ -49,7 +49,7 @@ const gEmails = [
         folder: 'trash',
         content: {
             to: 'Me',
-            from: ' Xiaomi Corporation ',
+            from: ' Xiaomi ',
             address: '<devora_h@gmail.com>',
             cc: null,
             bss: null,
