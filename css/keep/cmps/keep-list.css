@@ -4,7 +4,7 @@
     margin: 20px auto;
     /* display: grid; */
     width: 80%;
-    column-count: 4;
+    column-count: 3;
     column-gap: 10px;
     /* gap: 10px;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -19,7 +19,7 @@
     width: 100%;
     color: rgb(255, 250, 245);
     /* margin: 0 0 15px; */
-    padding: 15px;
+    padding: 10px;
     display: inline-block;
     /* text-shadow: 2px 2.5px 0 rgba(0, 0, 0, 0.301), -1px -1px 0 rgba(0, 0, 0, 0.253), 1px -1px 0 rgba(0, 0, 0, 0.432), -1px 1px 0 rgba(0, 0, 0, 0.575), 1px 1px 0 rgba(0, 0, 0, 0.459); */
     /* height: fit-content; */
