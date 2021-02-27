@@ -8,7 +8,7 @@ const gEmails = [
         status: {
             isStarred: false,
             isRead: false,
-            timestamp: new Date()
+            timestamp: new Date().toLocaleString()
         },
         folder: 'inbox',
         content: {
@@ -26,7 +26,7 @@ const gEmails = [
         status: {
             isStarred: true,
             isRead: true,
-            timestamp: new Date()
+            timestamp: new Date().toLocaleString()
         },
         folder: 'sent',
         content: {
@@ -44,7 +44,7 @@ const gEmails = [
         status: {
             isStarred: true,
             isRead: false,
-            timestamp: new Date()
+            timestamp: new Date().toLocaleString()
         },
         folder: 'trash',
         content: {
@@ -62,7 +62,7 @@ const gEmails = [
         status: {
             isStarred: false,
             isRead: true,
-            timestamp: new Date()
+            timestamp: new Date().toLocaleString()
         },
         folder: 'sent',
         content: {
@@ -80,7 +80,7 @@ const gEmails = [
         status: {
             isStarred: false,
             isRead: true,
-            timestamp: new Date()
+            timestamp: new Date().toLocaleString()
         },
         folder: 'inbox',
         content: {
@@ -98,7 +98,7 @@ const gEmails = [
         status: {
             isStarred: false,
             isRead: true,
-            timestamp: new Date()
+            timestamp: new Date().toLocaleString()
         },
         folder: 'inbox',
         content: {
@@ -116,7 +116,7 @@ const gEmails = [
         status: {
             isStarred: false,
             isRead: true,
-            timestamp: new Date()
+            timestamp: new Date().toLocaleString()
         },
         folder: 'inbox',
         content: {
@@ -172,7 +172,7 @@ function getEmptyEmail() {
         status: {
             isStarred: false,
             isRead: false,
-            timestamp: new Date()
+            timestamp: new Date().toLocaleString()
         },
         folder: 'draft',
         content: {

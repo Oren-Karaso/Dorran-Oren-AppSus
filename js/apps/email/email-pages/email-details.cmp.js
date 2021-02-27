@@ -3,14 +3,16 @@ import { emailService } from '../email-service/email.service.js'
 export default {
     template: `
     <section class="email-details" v-if="email">
-        <p>Subject: {{email.content.subject}}</p> 
-        <p>From: {{email.content.from}}</p> 
-        <p>To: {{email.content.to}}</p> 
-        <p>Created \\ Recieved at: {{email.status.timestamp}}</p> 
-        <p>Content: {{email.content.msgBody}}</p> 
-        <button @click="markReadUnRead">{{(!email.status.isRead) ? "Mark As Read" : "Mark As Unread"}}</button>
-        <router-link to="/email/inbox"><button>X</button></router-link>
-    </section>
+        <p class="dtls-subject">Subject: {{email.content.subject}}</p> 
+        <p class="dtls-from">From: {{email.content.from}}</p> 
+        <p class="dtls-to">To: {{email.content.to}}</p> 
+        <p class="dtls-date">Created \\ Recieved: {{email.status.timestamp}}</p> 
+        <p class="dtls-content">Content: {{email.content.msgBody}}</p>
+        <div class="dtls-bts">
+            <button @click="markReadUnRead">{{(!email.status.isRead) ? "Mark As Read" : "Mark As Unread"}}</button>
+            <router-link to="/email/inbox" class="close-dtls"><button><i class="fas fa-times"></i></button></router-link>
+        </div>
+        </section>
     `,
     data() {
         return {

@@ -1,2 +1,45 @@
 @import "/css/fonts.css";
 @import "/css/helpers.css";
+
+* {
+    box-sizing: border-box;
+}
+
+.email-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.dtls-subject {
+
+}
+
+.dtls-from {
+
+}
+
+.dtls-to {
+    
+}
+
+.dtls-date {
+    
+}
+
+.dtls-content {
+    
+}
+
+.dtls-bts {
+display: flex;
+}
+
+.dtls-bts button {
+    border-radius: 10px;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    box-shadow: 8px 5px 21px -1px rgba(0, 0, 0, 0.73);
+    border: 1px solid black;
+    margin-left: 8px;
+}
+
