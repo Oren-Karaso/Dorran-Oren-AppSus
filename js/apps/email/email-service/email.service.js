@@ -12,13 +12,13 @@ const gEmails = [
         },
         folder: 'inbox',
         content: {
-            to: 'Ima',
-            from: ' Aba ',
-            address: '<moshe_h@gmail.com>',
+            to: 'Me',
+            from: ' Amazon.com ',
+            address: '<customer-reviews-messages@amazon.com>',
             cc: null,
             bss: null,
-            subject: 'I love you',
-            msgBody: 'Can you please stop by the grocery store and bring some potatos?'
+            subject: 'did \'Plextone Windshield Repair Kit, Car...\' meet your expectations?',
+            msgBody: 'Customer reviews must comply with our Community Guidelines. We hope you found this message to be useful. However, if you\'d rather not receive future e-mails of this sort from Amazon.com, please unsubscribe here Please note that product prices and availability are subject to change. Prices and availability were accurate at the time this email was sent; however, they may differ from those you see when you visit Amazon.com. © 2021 Amazon.com, Inc. or its affiliates. All rights reserved. Amazon, Amazon.com, the Amazon.com logo and 1-Click are registered trademarks of Amazon.com, Inc. or its affiliates. Amazon.com, 410 Terry Avenue N., Seattle, WA 98109-5210.'
         }
     },
     {
@@ -30,13 +30,13 @@ const gEmails = [
         },
         folder: 'sent',
         content: {
-            to: 'Aba',
-            from: ' Ima ',
-            address: '<lea_h@gmail.com>',
+            to: 'Me',
+            from: ' Adobe ',
+            address: '<account-noreply@adobe.com>',
             cc: null,
             bss: null,
-            subject: 'The dog',
-            msgBody: 'I will bring the potatos, can you take the dog for a walk?'
+            subject: 'Welcome to Adobe',
+            msgBody: 'Adobe and the Adobe logo are either registered trademarks or trademarks of Adobe in the United States and/or other countries. All other trademarks are the property of their respective owners. © 2021 Adobe. All rights reserved. Registered Office: Adobe Systems Software Ireland Limited, 4-6 Riverwalk, Citywest Business Park, Dublin 24, Ireland. Registered number: 344992'
         }
     },
     {
@@ -48,13 +48,13 @@ const gEmails = [
         },
         folder: 'trash',
         content: {
-            to: 'Saba',
-            from: ' Savta ',
+            to: 'Me',
+            from: ' Xiaomi Corporation ',
             address: '<devora_h@gmail.com>',
             cc: null,
             bss: null,
-            subject: 'I am no technophob',
-            msgBody: 'Aren\'t you impressed by me sending emails like a pro?'
+            subject: 'Xiaomi Privacy Policy Update',
+            msgBody: 'Hi there! We\'re updating our Privacy Policy. It will apply to all Xiaomi devices, websites, or apps that refer to or are linked to this Privacy Policy. Here\'s what\'s going to change: We have updated some of our contact details. We have updated some of the information that is collected by us and by third parties. We have more clearly set out how we use non-personally identifiable information. We have updated how we use your personal information, including setting out in more detail when we process personal information based on our legitimate interests and in relation to your use of push services. We have provided further detail about data retention. We have more clearly set out your rights to your personal information.'
         }
     },
     {
