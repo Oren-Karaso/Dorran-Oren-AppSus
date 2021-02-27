@@ -3,7 +3,7 @@ export default {
     template: `
     <section class="email-preview">
         <p class ="from">{{ email.content.from }}</p>
-        <p class="subject">{{ email.content.subject }}</p>
+        <p class="subject">{{ email.content.subject }} -</p>
         <p class="content">{{ email.content.msgBody }}</p>
     </section>
     `,

@@ -4,11 +4,14 @@
     box-sizing: border-box;
 }
 
+.email-preview-container {
+    display: flex;
+}
+
 .read {
     font-weight: lighter;
     background-color: #32353a79;
     color: grey;
-
 }
 
 .unread {
@@ -25,11 +28,17 @@
 }
 
 .content {
-    margin-left: 20px;
+    margin-inline-start: 5px;
+    min-width: 200px;
     font-weight: 100;
     color: grey;
 }
 
 .subject {
-    margin-left: 23px;
+    margin-inline-start: 25px;
+}
+
+.from {
+    margin-inline-start: 25px;
+    min-width: 50px;
 }
