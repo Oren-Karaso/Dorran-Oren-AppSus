@@ -1,6 +1,7 @@
 @import "/css/fonts.css";
 @import "/css/helpers.css";
-.grid-container {
+.grid-container,
+.search-list {
     margin: 20px auto;
     /* display: grid; */
     width: 80%;
