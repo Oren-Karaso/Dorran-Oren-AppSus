@@ -12,11 +12,13 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    width: 90vw;
 }
 
+
 .email-search input {
-    width: 80%;
     font-size: 1.2rem;
+    width: 70%;
     height: 50%;
     border-radius: 10px;
     border: none;
