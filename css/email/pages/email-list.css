@@ -4,10 +4,6 @@
     box-sizing: border-box;
 }
 
-button {
-    margin-left: 5px;
-}
-
 .main-list-container {
     grid-area: 2 / 2 / 9 / 3;
 }
@@ -20,6 +16,9 @@ button {
 .btns-container-top {
     display: flex;
     margin-bottom: 25px;
+    font-size: large;
+    cursor: pointer;
+    color: rgb(189 179 179);
 }
 
 .btns-container-bottom {
@@ -35,8 +34,21 @@ button {
 
 .email-list li:hover {
     box-shadow: 0px 10px 6px -4px rgba(17, 17, 17, 0.281);
+    background-color: rgba(124, 123, 123, 0.185);
 }
 
 .email-list li {
     border: rgba(109, 109, 109, 0.137) solid 1px;
+}
+
+.remove-email {
+    height: fit-content;
+    cursor: pointer;
+    color: rgb(189 179 179);
+}
+
+.remove-email:hover {
+    height: fit-content;
+    cursor: pointer;
+    color: rgba(255, 0, 34, 0.644);
 }

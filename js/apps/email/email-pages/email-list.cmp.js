@@ -9,9 +9,7 @@ export default {
         <div class="btns-container-top" @click="filter(filterByRead)" :class="{'fas fa-envelope-open': !filterByRead, 'fas fa-envelope': filterByRead}"></div>
         <ul class="email-list">
           <li v-if="emails" v-for="email in emails" :key="email.id" class="email-preview-container" :class="{'read': email.status.isRead, 'unread': !email.status.isRead}">
-             <div class="btns-container-bottom">
-                <div class="remove-email" @click="removeEmail(email.id)"><i class="fas fa-trash-alt"></i></div>
-             </div>
+             <div class="remove-email" @click="removeEmail(email.id)"><i class="fas fa-trash-alt"></i></div>
              <router-link :to="'/email/'+email.folder+'/' +email.id"><email-preview :email="email" /></router-link>
           </li>
         </ul>
