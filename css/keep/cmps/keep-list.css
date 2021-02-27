@@ -27,3 +27,15 @@
     font-size: 1.1rem;
     /* text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.247); */
 }
+
+@media (max-width: 850px) {
+    .grid-container {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 500px) {
+    .grid-container {
+        column-count: 1;
+    }
+}

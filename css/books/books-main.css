@@ -110,16 +110,20 @@ body {
 .app-header a {
     color: rgb(255, 248, 239);
     text-decoration: none;
+    font-size: 1.1rem;
     margin-inline-end: 15px;
+    text-shadow: none;
 }
 
-.app-header a:hover {
+
+/* .app-header a:hover {
     color: antiquewhite;
-}
+} */
 
 .home {
     padding: 30px;
     display: flex;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .home h1 {
@@ -150,6 +154,9 @@ body {
 
 .story {
     margin-inline-start: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .home h2 {
@@ -243,7 +250,7 @@ p {
     cursor: pointer;
 }
 
-.search-bar {
+.search-nav {
     display: flex;
     align-items: center;
 }

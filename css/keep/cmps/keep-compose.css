@@ -10,7 +10,8 @@
 }
 
 .compose-container {
-    background-color: rgb(56, 53, 63);
+    /* background-color: rgb(56, 53, 63); */
+    background-color: rgb(64 61 71);
     padding: 0 10px;
     border-radius: 10px;
     align-items: center;
@@ -28,18 +29,22 @@
 }
 
 .compose input {
-    width: fit-content;
+    width: 300px;
     border: none;
     font-size: 1.2rem;
+    height: 35px;
+    border: none;
+    border-radius: 7px;
 }
 
 .compose-btns i {
     /* margin: 0 10px; */
-    font-size: 1.2rem;
+    /* font-size: 1.3rem; */
+    font-size: xx-large;
 }
 
 .compose-btns i:hover {
     cursor: pointer;
-    color: rgba(240, 240, 240, 0.767);
+    color: rgba(240, 240, 240, 0.459);
     /* color: rgb(255, 94, 107); */
 }

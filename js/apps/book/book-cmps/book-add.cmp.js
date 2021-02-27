@@ -2,7 +2,7 @@ export default {
     props: ['books'],
     template: `
     <section class="book-add">
-        <section class="search-bar">
+        <section class="search-nav">
             <h5 @click="showSearch">Search <br> & Add</h5>
             <input ref="searchInput" v-show="searching" type="search" @keydown.enter="onSearch" class="google-input" v-model="searchTerm" placeholder="Search"/>
         </section>
