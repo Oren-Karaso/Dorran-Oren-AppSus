@@ -23,7 +23,7 @@ export default {
                 <div @click="removeNote" class="delete-note"><i class="fas fa-trash-alt"></i></div>
                 <div @click="editMode = !editMode" class="edit-note"><i class="fas fa-edit"></i></div>
                 <div @click="changeColor" class="edit-color"><i class="fas fa-palette"></i></div>
-                <div @click="selectNote" class="pin-btn"><i class="fas fa-thumbtack"></i></div>
+                <div @click="pinNote" class="pin-btn"><i class="fas fa-thumbtack"></i></div>
             </section>
             <section class="edit-section">
             <input class="edit-color-input" v-if="editColor" type="color" v-model="rgb">
@@ -83,6 +83,11 @@ export default {
                 this.note.info.title = this.keepTitle;
             }
             eventBus.$emit('update', this.note);
+        },
+        pinNote() {
+            this.note.isPinned = true;
+            eventBus.$emit('pin', this.note);
+
         }
     },
     computed: {

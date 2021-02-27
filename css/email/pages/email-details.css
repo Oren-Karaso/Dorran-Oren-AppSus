@@ -1,6 +1,5 @@
 @import "/css/fonts.css";
 @import "/css/helpers.css";
-
 * {
     box-sizing: border-box;
 }
@@ -27,12 +26,10 @@
 }
 
 .dtls-from {
-margin-inline-end: 10px;
-}
-.dtls-subject {
-
+    margin-inline-end: 10px;
 }
 
+<<<<<<< HEAD
 .email-details p {
     color: ivory;
 }
@@ -49,21 +46,29 @@ margin-inline-end: 10px;
 .dtls-date {
     
 }
+=======
+.dtls-subject {}
 
-.dtls-content {
+.dtls-to {}
+>>>>>>> 548623e289d0880e5ec085dea401c108c91cb52b
 
+.dtls-date {}
+
+<<<<<<< HEAD
 } */
+=======
+.dtls-content {}
+>>>>>>> 548623e289d0880e5ec085dea401c108c91cb52b
 
 .dtls-bts {
-display: flex;
+    display: flex;
 }
 
 .dtls-bts button {
     border-radius: 10px;
     font-size: 1.2rem;
     padding: 5px 10px;
-    box-shadow: 8px 5px 21px -1px rgba(0, 0, 0, 0.73);
+    box-shadow: 0 0 10px -1px rgba(0, 0, 0, 0.73);
     border: 1px solid black;
     margin-left: 8px;
 }
-
