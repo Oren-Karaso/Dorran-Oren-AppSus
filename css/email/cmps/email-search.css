@@ -12,4 +12,9 @@
 
 .email-search input {
    width: 80%;
+   font-size: 1.2rem;
+   height: 50%;
+   border-radius: 10px;
+   border: none;
+   padding-inline-start: 17px;
 }

@@ -16,8 +16,27 @@ button {
     grid-area: 2 / 2 / 9 / 3;
 }
 
+.main-list-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.btns-container-top {
+    display: flex;
+    justify-content: center;
+}
+
 .email-list {
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+.email-list li:hover {
+    box-shadow: 0px 10px 6px -4px rgba(17, 17, 17, 0.281);
+}
+
+.email-list li {
+    /* border-top: rgba(109, 109, 109, 0.137) solid 1px; */
+    border: rgba(109, 109, 109, 0.137) solid 1px;
 }

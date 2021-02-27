@@ -8,6 +8,13 @@
     grid-area: 1 / 1 / 4 / 2;
 }
 
+.compose-btn {
+    border-radius: 10px;
+    border: none;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+}
+
 .email-sidebar-list {
     display: flex;
     flex-direction: column;
@@ -24,5 +31,5 @@
 }
 
 .email-sidebar-list li:hover {
-    background-color: rgb(110, 110, 110);
+    background-color: rgba(110, 110, 110, 0.185);
 }
