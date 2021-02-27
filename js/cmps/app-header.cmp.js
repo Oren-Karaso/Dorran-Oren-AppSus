@@ -1,8 +1,8 @@
 export default {
     template: `
    <header class="app-header">
-       <div class="logo">
-           <h1>AppSus</h1>
+       <div class="logo pointer">
+       <router-link active-class="active-link" to="/" exact class="nav-link"><h1>AppSus</h1></router-link> 
        </div>
        <nav>
            <router-link active-class="active-link" to="/" exact class="nav-link">Home</router-link> 
