@@ -23,8 +23,8 @@ export default {
     },
     methods: {
         save() {
-            this.newEmail.content.address = `${this.newEmail.content.to}@gmail.com`;
-            this.newEmail.content.from = 'Me';
+            this.newEmail.content.address = `<${this.newEmail.content.to}@gmail.com>`;
+            this.newEmail.content.from = 'Me ';
             this.newEmail.folder = 'sent';
             console.log('email to send:', this.newEmail);
             this.$emit('saved', this.newEmail);

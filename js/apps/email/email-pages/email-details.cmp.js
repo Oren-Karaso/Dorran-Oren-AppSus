@@ -3,10 +3,13 @@ import { emailService } from '../email-service/email.service.js'
 export default {
     template: `
     <section class="email-details" v-if="email">
-        <p class="dtls-subject">Subject: {{email.content.subject}}</p> 
-        <p class="dtls-from">From: {{email.content.from}}</p> 
+        <div class="from-address-date">
+            <p class="dtls-from">From: {{email.content.from}}</p> 
+            <p class="dtls-from">{{email.content.address}}</p> 
+            <p class="dtls-date">Created \\ Recieved: {{email.status.timestamp}}</p> 
+        </div>
         <p class="dtls-to">To: {{email.content.to}}</p> 
-        <p class="dtls-date">Created \\ Recieved: {{email.status.timestamp}}</p> 
+        <p class="dtls-subject">Subject: {{email.content.subject}}</p> 
         <p class="dtls-content">Content: {{email.content.msgBody}}</p>
         <div class="dtls-bts">
             <button @click="markReadUnRead">{{(!email.status.isRead) ? "Mark As Read" : "Mark As Unread"}}</button>
