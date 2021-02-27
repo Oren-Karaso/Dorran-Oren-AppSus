@@ -8,8 +8,8 @@
 @import "/css/email/pages/email-app.css";
 @import "/css/email/pages/email-details.css"; */
 
-@import "../../helpers.css";
-@import "../../fonts.css";
+@import "../helpers.css";
+@import "../fonts.css";
 @import "cmps/email-compose.css";
 @import "cmps/email-sidebar.css";
 @import "cmps/email-search.css";
