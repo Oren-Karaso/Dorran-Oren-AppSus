@@ -38,23 +38,3 @@
     color: rgba(240, 240, 240, 0.767);
     /* color: rgb(255, 94, 107); */
 }
-
-
-/* .new-note-show {
-    width: 200px;
-    max-width: 240px;
-    min-height: 200px;
-    height: fit-content;
-    background-color: #eeff00ea;
-    color: rgb(255, 250, 245);
-    text-shadow: 2px 2.5px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
-
-.new-note-show input {
-    border: none;
-    margin: 0;
-}
-
-.free-text {
-    border: none;
-} */

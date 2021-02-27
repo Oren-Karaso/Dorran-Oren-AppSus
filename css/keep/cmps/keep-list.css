@@ -1,7 +1,7 @@
 @import "/css/fonts.css";
 @import "/css/helpers.css";
 .grid-container {
-    margin: 20px;
+    margin: 20px auto;
     display: grid;
     width: 80%;
     gap: 10px;
@@ -12,11 +12,13 @@
 }
 
 .grid-item {
-    box-shadow: 0 0 7px rgba(15, 15, 15, 0.322);
     /* padding: 15px 10px 10px 10px; */
     /* background-color: #eeff00ea; */
     width: 100%;
     color: rgb(255, 250, 245);
-    text-shadow: 2px 2.5px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    height: fit-content;
+    /* text-shadow: 2px 2.5px 0 rgba(0, 0, 0, 0.301), -1px -1px 0 rgba(0, 0, 0, 0.253), 1px -1px 0 rgba(0, 0, 0, 0.432), -1px 1px 0 rgba(0, 0, 0, 0.575), 1px 1px 0 rgba(0, 0, 0, 0.459); */
+    /* height: fit-content; */
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    font-size: 1.1rem;
+    /* text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.247); */
 }

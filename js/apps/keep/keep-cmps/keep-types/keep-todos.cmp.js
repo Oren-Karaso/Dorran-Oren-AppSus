@@ -1,3 +1,6 @@
+import { eventBus } from '../../../../services/event-bus.service.js';
+
+
 export default {
     props: ['note'],
     template: `
@@ -22,11 +25,7 @@ export default {
             let currTodo = this.selectedNote.info.todolist.find(item => item === todo);
             currTodo.doneAt = Date.now();
             console.log('currTodo', currTodo);
-            // if (!this.noteDone) {
-            //     this.noteDone = 'done';
-            // } else {
-            //     this.noteDone = null;
-            // }
+            eventBus.$emit('update', this.note);
         }
 
     }
