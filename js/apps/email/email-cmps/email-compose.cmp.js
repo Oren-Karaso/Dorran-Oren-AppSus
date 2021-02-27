@@ -11,7 +11,7 @@ export default {
             <textarea class="send-body" cols="30" rows="10" placeholder="Your email here..." v-model="newEmail.content.msgBody"></textarea>
             <div class="compose-bts">
                 <button>Send</button>
-                <button @click.prevent="closeModal">X</button>
+                <button @click.prevent="closeModal"><i class="fas fa-times"></i></button>
             </div>
         </form> 
     </section>
