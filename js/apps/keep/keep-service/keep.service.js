@@ -27,33 +27,102 @@ function query() {
                         info: {
                             txt: "Fullstack Me Baby!"
                         },
-                        style: { backgroundColor: '#eeff00ea' }
+                        style: { backgroundColor: '#ecb390' }
 
                     },
                     {
                         id: utilService.makeId(),
-                        type: "keepImg",
+                        type: "keepVideo",
                         info: {
-                            url: "https://memegenerator.net/img/instances/69508134/i-know-vuejs.jpg",
-                            title: "Me playing Mi"
+                            url: "https://www.youtube.com/embed/VugasBUoBdI",
+                            title: "Dynamic Components"
                         },
                         style: {
-                            backgroundColor: "#00d"
+                            backgroundColor: "#f7dad9"
                         }
                     },
                     {
                         id: utilService.makeId(),
                         type: "keepTodos",
                         info: {
-                            label: "How was it:",
+                            title: "How was it:",
                             todolist: [
                                 { txt: "Do that", doneAt: null },
                                 { txt: "Do this", doneAt: 187111111 }
                             ]
                         },
-                        style: { backgroundColor: '#eeff00ea' }
+                        style: { backgroundColor: '#df7861' }
 
-                    }
+                    },
+                    {
+                        id: utilService.makeId(),
+                        type: "keepImg",
+                        info: {
+                            url: "https://img.freepik.com/free-vector/character-illustration-people-with-creative-ideas-icons_53876-59888.jpg?size=626&ext=jpg",
+                            title: "REMEMBER TO VECTOR"
+                        },
+                        style: {
+                            backgroundColor: "#d4e2d4"
+                        }
+                    }, {
+                        id: utilService.makeId(),
+                        type: "keepTodos",
+                        info: {
+                            title: "Groceries",
+                            todolist: [
+                                { txt: "🍅 x 6", doneAt: null },
+                                { txt: "🥒 x 4", doneAt: null },
+                                { txt: "🥑 x 2", doneAt: null },
+                                { txt: "🍞 WHITE BREAD", doneAt: null },
+                                { txt: "🥚", doneAt: null },
+                                { txt: "🧅 x 1kg", doneAt: null },
+                                { txt: "🥕 x 5", doneAt: null },
+                                { txt: "🍏 x 4", doneAt: null },
+                            ]
+                        },
+                        style: { backgroundColor: '#c663ff' },
+
+                    },
+
+                    {
+                        id: utilService.makeId(),
+                        type: "keepTxt",
+                        isPinned: true,
+                        info: {
+                            title: 'This is all i know:',
+                            txt: "I know about individuals and their slippery conscience."
+                        },
+                        style: { backgroundColor: '#fcf8e8' }
+
+                    },
+                    {
+                        id: utilService.makeId(),
+                        type: "keepVideo",
+                        info: {
+                            url: "https://www.youtube.com/embed/qvUWA45GOMg",
+                            title: "C H I L L"
+                        },
+                        style: {
+                            backgroundColor: "#b3b8ff"
+                        }
+                    },
+                    {
+                        id: utilService.makeId(),
+                        type: "keepTodos",
+                        info: {
+                            title: "To Do TODAY!",
+                            todolist: [
+                                { txt: "Clean Room", doneAt: null },
+                                { txt: "JS Assignment", doneAt: null },
+                                { txt: "Read", doneAt: null },
+                                { txt: "Laundry", doneAt: 187111111 },
+                                { txt: "Feed Mico", doneAt: null },
+                            ]
+                        },
+                        style: { backgroundColor: '#ffa7d2' }
+
+                    },
+                    { id: "oTvnX", type: "keepTxt", isPinned: false, style: { backgroundColor: "#c4ceed" }, info: { title: null, txt: "LETS DO TISH!" } }, { id: "P72HT", type: "keepTxt", isPinned: false, style: { backgroundColor: "#80ffbd" }, info: { title: null, txt: "YO!" } }, { id: "fhb2S", type: "keepTxt", isPinned: false, style: { backgroundColor: "#ffa18c" }, info: { title: null, txt: "HEY!" } }, { id: "iQMzN", type: "keepTxt", isPinned: false, style: { backgroundColor: "#ff7a7a" }, info: { title: "I wanna", txt: "Heyyyyy, sup?" } }, { id: "JBm7Z", type: "keepTxt", isPinned: true, info: { txt: "Fullstack Me Baby!", title: "SCHOOL IS COOL:" }, style: { backgroundColor: "#c799ff" } }, { id: "LEinV", type: "keepImg", info: { url: "https://memegenerator.net/img/instances/69508134/i-know-vuejs.jpg", title: "Me playing Mi" }, style: { backgroundColor: "#94c8ff" } }, { id: "qMvTa", type: "keepTodos", info: { title: "How was it:", todolist: [{ txt: "Do that", doneAt: null }, { txt: "Do this", doneAt: 187111111 }] }, style: { backgroundColor: "#7d7aff" } }
                 ]
 
                 return storageService.postMany(KEEP_KEY, notes);
@@ -116,7 +185,7 @@ function createKeep(keepType, content) {
         id: utilService.makeId(),
         type: keepType,
         isPinned: false,
-        style: { backgroundColor: '#eeff00ea' }
+        style: { backgroundColor: '#f7f7e8' }
     }
 
     if (keepType === 'keepVideo' || keepType === 'keepImg') {

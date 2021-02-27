@@ -6,7 +6,7 @@ export default {
     template: `
     <section>
         <ul>
-        <li @click="todoDone(todo)" v-for="todo in note.info.todolist" :class="{'done': todo.doneAt, 'undone': !todo.doneAt}" class="note-todo" > {{todo.txt}} </li> 
+        <li @click.stop="todoDone(todo)" v-for="todo in note.info.todolist" :class="{'done': todo.doneAt, 'undone': !todo.doneAt}" class="note-todo" > {{todo.txt}} </li> 
         </ul>
     
     </section>
