@@ -98,6 +98,5 @@ export default {
         eventBus.$off('changeFolder', this.showByFolder);
         eventBus.$off('sending', this.newEmail);
     },
-   
 }
 
