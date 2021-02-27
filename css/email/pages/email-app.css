@@ -10,3 +10,7 @@
     grid-template-rows: repeat(8, 1fr);
     grid-template-columns: 0.8fr 4fr;
 }
+
+.email-app i {
+    font-size: large;
+}

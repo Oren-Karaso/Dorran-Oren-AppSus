@@ -70,6 +70,57 @@ const gEmails = [
             subject: 'I am impressed indeed',
             msgBody: 'Now the only thing left for you is to learn using ZOOM!'
         }
+    },
+    {
+        id: utilService.makeId(),
+        status: {
+            isStarred: false,
+            isRead: true,
+            timestamp: new Date()
+        },
+        folder: 'inbox',
+        content: {
+            to: 'Me',
+            from: 'U.S. Bank',
+            cc: null,
+            bss: null,
+            subject: 'Tips on tackling debt and boosting your credit score',
+            msgBody: 'If you enjoyed this newsletter, you can now subscribe to future Financial IQ emails. Financial IQ offers wisdom through inspirational, educational and thought leadership resources. Choose what you’d like to receive¹ – personal, business and/or student – and select topics that interest you.'
+        }
+    },
+    {
+        id: utilService.makeId(),
+        status: {
+            isStarred: false,
+            isRead: true,
+            timestamp: new Date()
+        },
+        folder: 'inbox',
+        content: {
+            to: 'Me',
+            from: 'Booking.com',
+            cc: null,
+            bss: null,
+            subject: 'From glaciers to gelato',
+            msgBody: 'Dreaming of Europe We\'ve been reminiscing about our European adventures while watching Audrey Hepburn tour France in \'Two for the Road\'. These are some of the places we plan to visit again.'
+        }
+    },
+    {
+        id: utilService.makeId(),
+        status: {
+            isStarred: false,
+            isRead: true,
+            timestamp: new Date()
+        },
+        folder: 'inbox',
+        content: {
+            to: 'Me',
+            from: 'Roots',
+            cc: null,
+            bss: null,
+            subject: 'Roots Run for Reconciliation, Crowd-funding Campaign and Online Presentations',
+            msgBody: 'Four years ago we began to quietly expand our work to the southern Jordan Valley, and partnered there with local Israelis and Palestinians, who both love and care for the same beautiful strip of land, to found the first Roots satellite. Our Jordan Valley branch has grown by leaps and bounds, and it is time to let the world know that a new reality is being created there. We have ignited a small revolution in the way Israelis and Palestinians relate to each other in the Jordan Valley. Walls of ignorance, alienation and fear are falling and being replaced by mutual recognition, cooperation and a vision for a joint future together.'
+        }
     }
 ]
 // console.log('gEmails hardcoded data:', gEmails);
