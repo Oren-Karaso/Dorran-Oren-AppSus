@@ -7,25 +7,24 @@ export default {
     template: `
     <section class="main-list-container">
         <div class="btns-container-top">
-          <button @click="filter(filterByRead)">{{(filterByRead) ? "By read" : "By unread"}}</button>
-          <button @click="refreshDisplay">View All Emails</button>
+          <button @click="filter(filterByRead)" :class="{'fas fa-envelope-open': !filterByRead, 'fas fa-envelope': filterByRead}"></button>
         </div>
-     <ul class="email-list">
-        <li v-if="emails" v-for="email in emails" :key="email.id" class="email-preview-container" :class="{'read': email.status.isRead, 'unread': !email.status.isRead}">
-            <div class="btns-container-bottom">
-                <div class="remove-email" @click="removeEmail(email.id)">🗑</div>
-            </div>
-            <router-link :to="'/email/'+email.folder+'/' +email.id"><email-preview :email="email" /></router-link>
-        </li>
-     </ul>
-     <email-compose v-if="emptyEmail" @saved="sendAnEmail" :emptyEmail="emptyEmail" />
+        <ul class="email-list">
+          <li v-if="emails" v-for="email in emails" :key="email.id" class="email-preview-container" :class="{'read': email.status.isRead, 'unread': !email.status.isRead}">
+             <div class="btns-container-bottom">
+                <div class="remove-email" @click="removeEmail(email.id)"><i class="fas fa-trash-alt"></i></div>
+             </div>
+             <router-link :to="'/email/'+email.folder+'/' +email.id"><email-preview :email="email" /></router-link>
+          </li>
+        </ul>
+        <email-compose v-if="emptyEmail" @saved="sendAnEmail" :emptyEmail="emptyEmail" />
     </section>
     `,
     data() {
         return {
             emails: null,
             filterByRead: true,
-            emptyEmail: null
+            emptyEmail: null,
         }
     },
     methods: {

@@ -1,6 +1,5 @@
 @import "/css/fonts.css";
 @import "/css/helpers.css";
-
 * {
     box-sizing: border-box;
 }
@@ -13,10 +12,14 @@
 }
 
 .email-search input {
-   width: 80%;
-   font-size: 1.2rem;
-   height: 50%;
-   border-radius: 10px;
-   border: none;
-   padding-inline-start: 17px;
+    width: 80%;
+    font-size: 1.2rem;
+    height: 50%;
+    border-radius: 10px;
+    border: none;
+    padding-inline-start: 17px;
+}
+
+.fa-search {
+    margin-inline-end: 10px;
 }
