@@ -4,7 +4,7 @@ export default {
     template: `
     <section class="email-sidebar">
         <ul class="email-sidebar-list">
-           <li> <button class="compose-btn" @click="sending">+ Compose</button></li>
+           <li> <button class="compose-button" @click="sending">+ Compose</button></li>
            <li @click="reDirect('inbox')" class="inbox">📨 Inbox</li>
            <li @click="reDirect('starred')" class="starred">⭐ Starred</li>
            <li @click="reDirect('sent')" class="sent-mail">📤 Sent Mail</li>

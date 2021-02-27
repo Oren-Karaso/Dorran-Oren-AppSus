@@ -8,28 +8,29 @@
     grid-area: 1 / 1 / 4 / 2;
 }
 
-.compose-btn {
+.compose-button {
     border-radius: 10px;
     border: none;
     font-size: 1.2rem;
     padding: 5px 10px;
+    
+    
 }
 
-.email-sidebar-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    list-style-type: none;
-}
-
-.email-sidebar-list li {
-    cursor: pointer;
-    width: 150px;
-    padding: 10px;
-    margin-top: 10px;
-}
-
-.email-sidebar-list li:hover {
-    background-color: rgba(110, 110, 110, 0.185);
-}
+body#tinymce {
+    background: #FFFFFF .email-sidebar-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        list-style-type: none;
+    }
+    .email-sidebar-list li {
+        cursor: pointer;
+        width: 150px;
+        padding: 10px;
+        margin-top: 10px;
+    }
+    .email-sidebar-list li:hover {
+        background-color: rgba(110, 110, 110, 0.185);
+    }
