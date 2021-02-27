@@ -6,9 +6,7 @@ import { eventBus } from '../../../services/event-bus.service.js'
 export default {
     template: `
     <section class="main-list-container">
-        <div class="btns-container-top">
-          <button @click="filter(filterByRead)" :class="{'fas fa-envelope-open': !filterByRead, 'fas fa-envelope': filterByRead}"></button>
-        </div>
+        <div class="btns-container-top" @click="filter(filterByRead)" :class="{'fas fa-envelope-open': !filterByRead, 'fas fa-envelope': filterByRead}"></div>
         <ul class="email-list">
           <li v-if="emails" v-for="email in emails" :key="email.id" class="email-preview-container" :class="{'read': email.status.isRead, 'unread': !email.status.isRead}">
              <div class="btns-container-bottom">

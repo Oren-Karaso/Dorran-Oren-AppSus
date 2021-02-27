@@ -24,19 +24,17 @@
     list-style-type: none;
 }
 
+.email-sidebar-list i {
+    margin-inline-end: 10px;
+    color: black;
+}
+
 .email-sidebar-list li {
     cursor: pointer;
     width: 90%;
     padding: 10px;
     margin-top: 10px;
 }
-
-
-/* .email-sidebar-list :first-child {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
 
 .email-sidebar-list li:not(:first-child):hover {
     background-color: rgba(110, 110, 110, 0.185);
