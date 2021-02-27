@@ -1,7 +1,6 @@
 import { keepService } from '../keep-service/keep.service.js';
 import keepList from '../keep-cmps/keep-list.cmp.js';
 import keepFilter from '../keep-cmps/keep-filter.cmp.js';
-import keepEdit from '../keep-cmps/keep-edit.cmp.js';
 import keepCompose from '../keep-cmps/keep-compose.cmp.js';
 import keepPreview from '../keep-cmps/keep-preview.cmp.js';
 import { eventBus } from '../../../services/event-bus.service.js';
@@ -13,7 +12,7 @@ export default {
         <section class="keep-app flex">
         <keep-filter @search="searchNote"/>
         <keep-compose @todos="createTodos"/>
-        <keep-list v-if="notes" :notes="notes" :searchFor="searchRes" />
+        <keep-list v-if="notes" :notes="notes" :searchFor="searchRes" :pinned="pinnedNotes" />
 
         </section>
         `,
@@ -23,7 +22,8 @@ export default {
             selectedNote: null,
             newNoteType: null,
             newNoteContent: null,
-            searchRes: null
+            searchRes: null,
+            pinnedNotes: []
 
         }
     },
@@ -53,8 +53,6 @@ export default {
         },
 
         updateNote(note) {
-            // make a function that uses storage-service - put
-            // to update note
             const updatedNote = this.notes.find(item => item.id === note.id);
             keepService.updateKeep(updatedNote);
             setTimeout(() => {
@@ -77,7 +75,13 @@ export default {
             this.searchRes = searchKeeps;
             console.log('searchKeeps', searchKeeps);
             // keepService.query().then(notes => this.notes = notes);
+        },
+        pinKeep(note) {
+            const pinned = this.notes.find(item => item === note);
+            console.log('pinned', pinned)
+            this.pinnedNotes.push(pinned);
         }
+
 
     },
     created() {
@@ -86,8 +90,7 @@ export default {
         eventBus.$on('keepType', this.noteType);
         eventBus.$on('content', this.addNote);
         eventBus.$on('update', this.updateNote);
-        // eventBus.$on('todos', this.createTodos);
-        // eventBus.$on('search', this.searchNote);
+        eventBus.$on('pin', this.pinKeep);
 
 
 
@@ -98,6 +101,7 @@ export default {
         eventBus.$off('content', this.content);
         eventBus.$off('update', this.updateNote);
         eventBus.$off('todos', this.createTodos);
+        eventBus.$off('pin', this.pinKeep);
 
 
 
@@ -105,7 +109,6 @@ export default {
     },
     components: {
         keepCompose,
-        keepEdit,
         keepFilter,
         keepList,
         keepPreview
