@@ -1,4 +1,4 @@
-@import "/css/fonts.css";
+/* @import "/css/fonts.css";
 @import "/css/helpers.css";
 @import "/css/email/cmps/email-compose.css";
 @import "/css/email/cmps/email-sidebar.css";
@@ -6,4 +6,14 @@
 @import "/css/email/cmps/email-preview.css";
 @import "/css/email/pages/email-list.css";
 @import "/css/email/pages/email-app.css";
-@import "/css/email/pages/email-details.css";
+@import "/css/email/pages/email-details.css"; */
+
+@import "../helpers.css";
+@import "../fonts.css";
+@import "./cmps/email-compose.css";
+@import "./cmps/email-sidebar.css";
+@import "./cmps/email-search.css";
+@import "./cmps/email-preview.css";
+@import "./pages/email-app.css";
+@import "./pages/email-details.css";
+@import "./pages/email-list.css";
