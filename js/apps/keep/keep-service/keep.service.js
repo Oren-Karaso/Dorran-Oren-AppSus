@@ -20,112 +20,179 @@ function query() {
     return storageService.query(KEEP_KEY)
         .then(notes => {
             if (!notes.length) {
-                notes = [{
-                        id: utilService.makeId(),
-                        type: "keepTxt",
-                        isPinned: true,
-                        info: {
-                            txt: "Fullstack Me Baby!"
-                        },
-                        style: { backgroundColor: '#ecb390' }
+                notes =
+                    //         id: utilService.makeId(),
+                    //         type: "keepTxt",
+                    //         isPinned: true,
+                    //         info: {
+                    //             txt: "Fullstack Me Baby!"
+                    //         },
+                    //         style: { backgroundColor: '#ecb390' }
 
-                    },
-                    {
-                        id: utilService.makeId(),
-                        type: "keepVideo",
-                        info: {
-                            url: "https://www.youtube.com/embed/VugasBUoBdI",
-                            title: "Dynamic Components"
-                        },
-                        style: {
-                            backgroundColor: "#f7dad9"
-                        }
-                    },
-                    {
-                        id: utilService.makeId(),
-                        type: "keepTodos",
-                        isPinned: false,
-                        info: {
-                            title: "How was it:",
-                            todolist: [
-                                { txt: "Do that", doneAt: null },
-                                { txt: "Do this", doneAt: 187111111 }
-                            ]
-                        },
-                        style: { backgroundColor: '#df7861' }
+                    //     },
+                    //     {
+                    //         id: utilService.makeId(),
+                    //         type: "keepVideo",
+                    //         info: {
+                    //             url: "https://www.youtube.com/embed/VugasBUoBdI",
+                    //             title: "Dynamic Components"
+                    //         },
+                    //         style: {
+                    //             backgroundColor: "#f7dad9"
+                    //         }
+                    //     },
+                    //     {
+                    //         id: utilService.makeId(),
+                    //         type: "keepTodos",
+                    //         isPinned: false,
+                    //         info: {
+                    //             title: "How was it:",
+                    //             todolist: [
+                    //                 { txt: "Do that", doneAt: null },
+                    //                 { txt: "Do this", doneAt: 187111111 }
+                    //             ]
+                    //         },
+                    //         style: { backgroundColor: '#df7861' }
 
-                    },
-                    {
-                        id: utilService.makeId(),
-                        type: "keepImg",
-                        isPinned: false,
-                        info: {
-                            url: "https://img.freepik.com/free-vector/character-illustration-people-with-creative-ideas-icons_53876-59888.jpg?size=626&ext=jpg",
-                            title: "REMEMBER TO VECTOR"
-                        },
-                        style: {
-                            backgroundColor: "#d4e2d4"
-                        }
-                    }, {
-                        id: utilService.makeId(),
-                        type: "keepTodos",
-                        info: {
-                            title: "Groceries",
-                            todolist: [
-                                { txt: "🍅 x 6", doneAt: null },
-                                { txt: "🥒 x 4", doneAt: null },
-                                { txt: "🥑 x 2", doneAt: null },
-                                { txt: "🍞 WHITE BREAD", doneAt: null },
-                                { txt: "🥚", doneAt: null },
-                                { txt: "🧅 x 1kg", doneAt: null },
-                                { txt: "🥕 x 5", doneAt: null },
-                                { txt: "🍏 x 4", doneAt: null },
-                            ]
-                        },
-                        style: { backgroundColor: '#c663ff' },
+                    //     },
+                    //     {
+                    //         id: utilService.makeId(),
+                    //         type: "keepImg",
+                    //         isPinned: false,
+                    //         info: {
+                    //             url: "https://img.freepik.com/free-vector/character-illustration-people-with-creative-ideas-icons_53876-59888.jpg?size=626&ext=jpg",
+                    //             title: "REMEMBER TO VECTOR"
+                    //         },
+                    //         style: {
+                    //             backgroundColor: "#d4e2d4"
+                    //         }
+                    //     }, {
+                    //         id: utilService.makeId(),
+                    //         type: "keepTodos",
+                    //         info: {
+                    //             title: "Groceries",
+                    //             todolist: [
+                    //                 { txt: "🍅 x 6", doneAt: null },
+                    //                 { txt: "🥒 x 4", doneAt: null },
+                    //                 { txt: "🥑 x 2", doneAt: null },
+                    //                 { txt: "🍞 WHITE BREAD", doneAt: null },
+                    //                 { txt: "🥚", doneAt: null },
+                    //                 { txt: "🧅 x 1kg", doneAt: null },
+                    //                 { txt: "🥕 x 5", doneAt: null },
+                    //                 { txt: "🍏 x 4", doneAt: null },
+                    //             ]
+                    //         },
+                    //         style: { backgroundColor: '#c663ff' },
 
-                    },
+                    //     },
 
-                    {
-                        id: utilService.makeId(),
-                        type: "keepTxt",
-                        isPinned: true,
-                        info: {
-                            title: 'This is all i know:',
-                            txt: "I know about individuals and their slippery conscience."
-                        },
-                        style: { backgroundColor: '#fcf8e8' }
+                    //     {
+                    //         id: utilService.makeId(),
+                    //         type: "keepTxt",
+                    //         isPinned: true,
+                    //         info: {
+                    //             title: 'This is all i know:',
+                    //             txt: "I know about individuals and their slippery conscience."
+                    //         },
+                    //         style: { backgroundColor: '#fcf8e8' }
 
-                    },
-                    {
-                        id: utilService.makeId(),
-                        type: "keepVideo",
-                        info: {
-                            url: "https://www.youtube.com/embed/qvUWA45GOMg",
-                            title: "C H I L L"
-                        },
-                        style: {
-                            backgroundColor: "#b3b8ff"
-                        }
-                    },
-                    {
-                        id: utilService.makeId(),
-                        type: "keepTodos",
-                        info: {
-                            title: "To Do TODAY!",
-                            todolist: [
-                                { txt: "Clean Room", doneAt: null },
-                                { txt: "JS Assignment", doneAt: null },
-                                { txt: "Read", doneAt: null },
-                                { txt: "Laundry", doneAt: 187111111 },
-                                { txt: "Feed Mico", doneAt: null },
-                            ]
-                        },
-                        style: { backgroundColor: '#ffa7d2' }
+                    //     },
+                    //     {
+                    //         id: utilService.makeId(),
+                    //         type: "keepVideo",
+                    //         info: {
+                    //             url: "https://www.youtube.com/embed/qvUWA45GOMg",
+                    //             title: "C H I L L"
+                    //         },
+                    //         style: {
+                    //             backgroundColor: "#b3b8ff"
+                    //         }
+                    //     },
+                    //     {
+                    //         id: utilService.makeId(),
+                    //         type: "keepTodos",
+                    //         info: {
+                    //             title: "To Do TODAY!",
+                    //             todolist: [
+                    //                 { txt: "Clean Room", doneAt: null },
+                    //                 { txt: "JS Assignment", doneAt: null },
+                    //                 { txt: "Read", doneAt: null },
+                    //                 { txt: "Laundry", doneAt: 187111111 },
+                    //                 { txt: "Feed Mico", doneAt: null },
+                    //             ]
+                    //         },
+                    //         style: { backgroundColor: '#ffa7d2' }
 
-                    },
-                    { id: "oTvnX", type: "keepTxt", isPinned: false, style: { backgroundColor: "#c4ceed" }, info: { title: null, txt: "LETS DO TISH!" } }, { id: "P72HT", type: "keepTxt", isPinned: false, style: { backgroundColor: "#80ffbd" }, info: { title: null, txt: "YO!" } }, { id: "fhb2S", type: "keepTxt", isPinned: false, style: { backgroundColor: "#ffa18c" }, info: { title: null, txt: "HEY!" } }, { id: "iQMzN", type: "keepTxt", isPinned: false, style: { backgroundColor: "#ff7a7a" }, info: { title: "I wanna", txt: "Heyyyyy, sup?" } }, { id: "JBm7Z", type: "keepTxt", isPinned: true, info: { txt: "Fullstack Me Baby!", title: "SCHOOL IS COOL:" }, style: { backgroundColor: "#c799ff" } }, { id: "LEinV", type: "keepImg", info: { url: "https://memegenerator.net/img/instances/69508134/i-know-vuejs.jpg", title: "Me playing Mi" }, style: { backgroundColor: "#94c8ff" } }, { id: "qMvTa", type: "keepTodos", info: { title: "How was it:", todolist: [{ txt: "Do that", doneAt: null }, { txt: "Do this", doneAt: 187111111 }] }, style: { backgroundColor: "#7d7aff" } }
-                ]
+                    //     },
+                    //     {
+                    //         id: "oTvnX",
+                    //         type: "keepTxt",
+                    //         isPinned: false,
+                    //         style: { backgroundColor: "#c4ceed" },
+                    //         info: {
+                    //             title: null,
+                    //             txt: "LETS DO TISH!"
+                    //         }
+                    //     },
+                    //     {
+                    //         id: "P72HT",
+                    //         type: "keepTxt",
+                    //         isPinned: false,
+                    //         style: { backgroundColor: "#80ffbd" },
+                    //         info: {
+                    //             title: null,
+                    //             txt: "YO!"
+                    //         }
+                    //     },
+                    //     {
+                    //         id: "fhb2S",
+                    //         type: "keepTxt",
+                    //         isPinned: false,
+                    //         style: { backgroundColor: "#ffa18c" },
+                    //         info: {
+                    //             title: null,
+                    //             txt: "HEY! DONT FORGET TO CALL YOUR MOM"
+                    //         }
+                    //     }, {
+                    //         id: "iQMzN",
+                    //         type: "keepTxt",
+                    //         isPinned: false,
+                    //         style: { backgroundColor: "#ff7a7a" },
+                    //         info: {
+                    //             title: "Things Better Get Me",
+                    //             txt: "WHERE I WANNA GO"
+                    //         }
+                    //     },
+                    //     {
+                    //         id: "JBm7Z",
+                    //         type: "keepTxt",
+                    //         isPinned: true,
+                    //         info: {
+                    //             txt: "Fullstack Me Baby!",
+                    //             title: "SCHOOL IS COOL:"
+                    //         },
+                    //         style: { backgroundColor: "#c799ff" }
+                    //     },
+                    //     {
+                    //         id: "LEinV",
+                    //         type: "keepImg",
+                    //         info: {
+                    //             url: "https://memegenerator.net/img/instances/69508134/i-know-vuejs.jpg",
+                    //             title: "Me playing Mi"
+                    //         },
+                    //         style: { backgroundColor: "#94c8ff" }
+                    //     },
+                    //     {
+                    //         id: "qMvTa",
+                    //         type: "keepTodos",
+                    //         info: {
+                    //             title: "How was it:",
+                    //             todolist: [{ txt: "Do that", doneAt: null }, { txt: "Do this", doneAt: 187111111 }]
+                    //         },
+                    //         style: { backgroundColor: "#7d7aff" }
+                    //     }
+                    [{ "id": "8SfCC", "type": "keepTxt", "isPinned": true, "info": { "txt": "Try to survive Sprint 3 👾😈", "title": "Fullstack Me Baby!" }, "style": { "backgroundColor": "#bf80ff" } }, { "id": "m80WZ", "type": "keepVideo", "info": { "url": "https://www.youtube.com/embed/VugasBUoBdI", "title": "Dynamic Components" }, "style": { "backgroundColor": "#ffc9c7" } }, { "id": "11nOo", "type": "keepTodos", "isPinned": false, "info": { "title": "How was it:", "todolist": [{ "txt": "Do that", "doneAt": null }, { "txt": "Do this", "doneAt": 187111111 }] }, "style": { "backgroundColor": "#ffe7bd" } }, { "id": "jdBhk", "type": "keepImg", "isPinned": false, "info": { "url": "https://img.freepik.com/free-vector/character-illustration-people-with-creative-ideas-icons_53876-59888.jpg?size=626&ext=jpg", "title": "REMEMBER TO VECTOR" }, "style": { "backgroundColor": "#bcf0bc" } }, { "id": "ePkgs", "type": "keepTodos", "info": { "title": "Groceries", "todolist": [{ "txt": "🍅 x 6", "doneAt": null }, { "txt": "🥒 x 4", "doneAt": null }, { "txt": "🥑 x 2", "doneAt": null }, { "txt": "🍞 WHITE BREAD", "doneAt": null }, { "txt": "🥚", "doneAt": null }, { "txt": "🧅 x 1kg", "doneAt": null }, { "txt": "🥕 x 5", "doneAt": 1614462534557 }, { "txt": "🍏 x 4", "doneAt": null }] }, "style": { "backgroundColor": "#c2fff3" } }, { "id": "SCuSN", "type": "keepTxt", "isPinned": true, "info": { "title": "This is all i know:", "txt": "I know about individuals and their slippery conscience." }, "style": { "backgroundColor": "#fcf8e8" } }, { "id": "jHHgX", "type": "keepVideo", "info": { "url": "https://www.youtube.com/embed/qvUWA45GOMg", "title": "C H I L L" }, "style": { "backgroundColor": "#b3b8ff" } }, { "id": "kNZlz", "type": "keepTodos", "info": { "title": "To Do TODAY!", "todolist": [{ "txt": "Clean Room", "doneAt": null }, { "txt": "JS Assignment", "doneAt": null }, { "txt": "Read", "doneAt": null }, { "txt": "Laundry", "doneAt": 187111111 }, { "txt": "Feed Mico", "doneAt": null }] }, "style": { "backgroundColor": "#feffc2" } }, { "id": "P72HT", "type": "keepTxt", "isPinned": false, "style": { "backgroundColor": "#80ffbd" }, "info": { "title": "Plan Cyprus", "txt": "Arriving  day one to Larnaka, need to find hotel for the first two nights. Going to the mountains for 3 days - 2 nights, find air b&b next to Pappos" } }, { "id": "fhb2S", "type": "keepTxt", "isPinned": false, "style": { "backgroundColor": "#ffa18c" }, "info": { "title": null, "txt": "HEY! DONT FORGET TO CALL YOUR MOM" } }, { "id": "iQMzN", "type": "keepTxt", "isPinned": false, "style": { "backgroundColor": "#ff7a7a" }, "info": { "title": "Things Better Get Me", "txt": "WHERE I WANNA GO" } }, { "id": "JBm7Z", "type": "keepTxt", "isPinned": true, "info": { "txt": "A program thats solves errors. Without me. get it?", "title": "Ideas for startups" }, "style": { "backgroundColor": "#ff8ac2" } }, { "id": "LEinV", "type": "keepImg", "info": { "url": "https://memegenerator.net/img/instances/69508134/i-know-vuejs.jpg", "title": "Me playing Mi" }, "style": { "backgroundColor": "#c59eff" } }]
+
 
                 return storageService.postMany(KEEP_KEY, notes);
             }
