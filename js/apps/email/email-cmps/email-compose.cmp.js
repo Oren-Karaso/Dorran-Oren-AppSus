@@ -3,16 +3,16 @@ export default {
     props: ['emptyEmail'],
     template: `
     <section class="email-compose-container">
-    <form @submit="save">
-            <input type="text" placeholder="Name" v-model="newEmail.content.from">
-            <input type="text" placeholder="To" v-model="newEmail.content.to">
-            <input type="text" placeholder="Cc" v-model="newEmail.content.cc">
-            <input type="text" placeholder="Bcc" v-model="newEmail.content.bcc">
-            <input type="text" placeholder="Subject" v-model="newEmail.content.subject">
-            <textarea cols="30" rows="10" placeholder="Your email here..." v-model="newEmail.content.msgBody"></textarea>
-            <button>Send</button>
-            <!-- <button>Save as draft</button> -->
-            <!-- :folder="emptyEmail.folder -->
+        <form @submit="save">
+            <input class="send-to" type="text" placeholder="To" v-model="newEmail.content.to">
+            <input class="send-subject" type="text" placeholder="Subject" v-model="newEmail.content.subject">
+            <input class="send-cc" type="text" placeholder="Cc" v-model="newEmail.content.cc">
+            <input class="send-bcc" type="text" placeholder="Bcc" v-model="newEmail.content.bcc">
+            <textarea class="send-body" cols="30" rows="10" placeholder="Your email here..." v-model="newEmail.content.msgBody"></textarea>
+            <div class="compose-bts">
+                <button>Send</button>
+                <button @click.prevent="closeModal">X</button>
+            </div>
         </form> 
     </section>
     `,
@@ -26,6 +26,9 @@ export default {
             this.newEmail.folder = 'sent';
             console.log('email to send:', this.newEmail);
             this.$emit('saved', this.newEmail);
+        },
+        closeModal() {
+            this.$emit('closeCompose');
         }
     },
     components: {
