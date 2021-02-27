@@ -23,7 +23,11 @@ button {
 
 .btns-container-top {
     display: flex;
-    justify-content: center;
+    margin-bottom: 25px;
+}
+.btns-container-bottom {
+    display: flex;
+    /* margin-bottom: 25px; */
 }
 
 .email-list {
@@ -37,6 +41,5 @@ button {
 }
 
 .email-list li {
-    /* border-top: rgba(109, 109, 109, 0.137) solid 1px; */
     border: rgba(109, 109, 109, 0.137) solid 1px;
 }

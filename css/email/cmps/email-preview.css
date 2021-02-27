@@ -16,3 +16,7 @@
 .email-preview-container {
     padding: 15px;
 }
+
+.email-preview {
+    display: flex;
+}

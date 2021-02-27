@@ -3,8 +3,8 @@ import { eventBus } from '../../../services/event-bus.service.js'
 export default {
     template: `
     <section class="email-sidebar">
-        <button class="compose-btn" @click="sending">+ Compose</button>
         <ul class="email-sidebar-list">
+           <li> <button class="compose-btn" @click="sending">+ Compose</button></li>
            <li @click="reDirect('inbox')" class="inbox">📨 Inbox</li>
            <li @click="reDirect('starred')" class="starred">⭐ Starred</li>
            <li @click="reDirect('sent')" class="sent-mail">📤 Sent Mail</li>
